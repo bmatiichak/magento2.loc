@@ -11,6 +11,14 @@
 //  Typography
 //  ---------------------------------------------
 
+// Font sizes
+
+@font-size__xs_s: ceil(0.5 * @font-size__base); // 7px
+@font-size__s_l: ceil(1.15 * @font-size__base); // 16px
+@font-size__xl_s: ceil(1.85 * @font-size__base); // 26px
+@font-size__xl_l: ceil(2.15 * @font-size__base); // 30px
+@font-size__xl_xl: ceil(2.55 * @font-size__base); // 36px
+
 //  Font families
 @font-family-poppins: 'Poppins', sans-serif;
 @font-family-oswald: 'Oswald', sans-serif;
@@ -20,6 +28,19 @@
 @font-family-name__base: @font-family-poppins;
 @font-family__base: @font-family-name__base, @font-family__sans-serif;
 
+//  Responsive breakpoints
+
+@screen__m_s: 480px;
+@screen__m_l: 767px;
+
+//   Font-Weights
+
+@font-weight-light: 300;
+@font-weight-regular: 400;
+@font-weight-medium: 500;
+@font-weight-semibold: 600;
+@font-weight-bold: 700;
+
 // Colors
 
 @color-elogic-black: #222;
@@ -28,6 +49,7 @@
 @color-elogic-gray-discounts: #555;
 @color-elogic-gray-dark: #333;
 @color-elogic-gray-dropdown: #777;
+@color-elogic-gray-banner: #F3F3F3;
 @color-elogic-white: #fff;
 
 //  Colors nesting
