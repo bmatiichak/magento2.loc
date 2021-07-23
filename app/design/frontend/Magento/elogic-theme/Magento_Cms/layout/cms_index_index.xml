@@ -3,9 +3,6 @@
     <body>
         <referenceContainer name="content">
             <block class="Magento\Framework\View\Element\Template" name="main.slider"/>
-<<<<<<< HEAD
-=======
             <block class="Magento\Framework\View\Element\Template" name="categories"/>
->>>>>>> 3-14-categories
     </body>
 </page>
