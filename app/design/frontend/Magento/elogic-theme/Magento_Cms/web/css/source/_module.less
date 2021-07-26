@@ -80,7 +80,7 @@
 
     .banner_container {
         .lib-css(background-color, @color-elogic-gray-banner);
-        .lib-vendor-prefix-display(grid);
+        .lib-vendor-prefix-grid-display(grid);
         .lib-vendor-box-align(center);
         height: auto;
         padding: 10%;
@@ -116,7 +116,7 @@
     }
 
     .banner_container {
-        grid-template-columns: 1fr;
+        .lib-vendor-prefix-grid-template-columns(1fr);
         text-align: center;
     }
 
@@ -152,11 +152,11 @@
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break = @screen__m) {
     .banner_container {
-        grid-template-columns: 1fr 1fr;
+        .lib-vendor-prefix-grid-template-columns(1fr 1fr);
     }
 
     .banner-heading {
-        justify-self: flex-end;
+        .lib-vendor-prefix-grid-justify-self(flex-end);
         padding-right: 10%;
     }
 
