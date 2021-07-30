@@ -37,7 +37,9 @@
     }
 
     h1,
-    h2 {
+    h2,
+    h3,
+    h5 {
         .lib-css(font-weight, @font-weight-semibold);
         .lib-css(color, @color-elogic-black);
         text-transform: uppercase;
@@ -69,6 +71,7 @@
 
     a {
         .lib-css(color, @color-elogic-black);
+        text-transform: uppercase;
         transition: all 0.2s ease;
         -webkit-transition: all 0.2s ease;
         -moz-transition: all 0.2s ease;
@@ -87,7 +90,6 @@
                 .lib-css(color, @color-elogic-gray-main);
                 border-bottom: 1px solid @color-elogic-gray-main;
             }
-            text-transform: uppercase;
             text-decoration: none;
             border-bottom: 1px solid @color-elogic-black;
             padding-bottom: 0.5rem;
@@ -121,7 +123,7 @@
 //____________________________________
 
 .content-container {
-    margin: 40px auto 70px auto;
+    margin: 40px auto;
 }
 
 .categories {
@@ -181,42 +183,43 @@
     left: 0;
 }
 
+//              SALE
+//________________________________________
+
+.sale {
+	.lib-vendor-prefix-grid-display(grid);
+	.lib-vendor-prefix-grid-template-columns(1fr 1fr);
+	.lib-vendor-box-align(center);
+    .lib-css(background, url('https://i.ibb.co/J2T8NXR/image.png'));
+    // background: linear-gradient( rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) ), url('https://i.ibb.co/BCM35Lm/bg.jpg');
+	background-size: cover;
+	margin: 30px 0;
+}
+
+.sale-button {
+	a {
+		text-decoration: 0;
+		border-bottom: 1px solid @color-elogic-black;
+		padding-bottom: 5px;
+		transition: all 0.3s ease;
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		-ms-transition: all 0.3s ease;
+		-o-transition: all 0.3s ease;
+		&:hover {
+			.lib-css(color, @color-elogic-gray-main);
+			border-bottom: 1px solid @color-elogic-gray-main;
+		}
+		&:active {
+			.lib-css(color, @color-elogic-gray-main);
+			border-bottom: 1px solid @color-elogic-gray-main;
+		}
+	}
+}
 
 
-
-// & when (@media-common = true) {
-//     .products-grid {
-//         .products-items .widget-product-grid {
-//             .lib-vendor-prefix-grid-display(grid);
-//             .lib-vendor-prefix-grid-template-columns(1fr 1fr 1fr 1fr);
-//             gap: 30px;    
-//         }
-//     }
-
-//     .product-item {
-//         width: 100%;
-//         height: auto;
-//     }
-
-// }
-
-// .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-
-// }
-
-// .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-
-// }
-
-// .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-
-// }
-
-// .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
-
-// }
 //
-//  Mobile @screen__m (big mobile) from 480 to 767
+//  Mobile @screen__m (big mobile) from 480(640) to 767
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
@@ -279,10 +282,70 @@
     .btn-category {
         padding-top: 1rem;
     }
+
+    .sale {
+        background-position: 0% 18%;
+        padding: 0;
+        height: 150px;
+    }
+
+    .sale-text {
+        padding-left: 20%;
+        h3 {
+            .lib-css(font-size, @font-size__l_xl);
+        }
+        h5 {
+            .lib-css(font-weight, @font-weight-regular);
+        }
+    }
+
+
+    .sale-button {
+        .lib-vendor-prefix-grid-justify-self(flex-end);
+        padding-right: 20%;
+        a {
+            .lib-css(font-size, @font-size__base);
+        }
+    }
+
 }
 
 //
-//  Mobile @screen__s (mobile regular) up to 480
+//  Mobile @screen__s (mobile big) 480 to 640
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {
+    .sale {
+        .lib-vendor-prefix-grid-template-columns(1fr);
+        background-position: 0% 10%;
+        place-items: center;
+        text-align: center;
+        height: 200px;
+    }
+    .sale-text {
+        padding: 0;
+        .lib-vendor-prefix-grid-justify-self(auto);
+        h3 {
+            .lib-css(font-size, @font-size__l_xl);
+        }
+        h5 {
+            .lib-css(font-size, @font-size__base);
+            .lib-css(font-weight, @font-weight-regular);
+        }
+    }
+    .sale-button {
+        padding: 0;
+        padding-bottom: 10px;
+        .lib-vendor-prefix-grid-justify-self(auto);
+        a {
+            .lib-css(font-size, @font-size__base);
+        }
+    }
+
+}
+
+//
+//  Mobile @screen__xs (mobile regular) up to 480
 //  _____________________________________________
 
 // .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xs) {
@@ -335,6 +398,11 @@
         width: 100%;
         margin: 0;
         position: relative;
+    }
+
+    .sale-container {
+        width: 90%;
+        margin: 0 auto;
     }
 
     .categories {
@@ -409,7 +477,28 @@
         margin: 40px auto;
         width: 90%;
     }
+
+    .sale {
+        padding: 5% 5%;
+    }
+    
+    .sale-text {
+        h3 {
+            .lib-css(font-size, @font-size__s_l);
+        }
+        h5 {
+            .lib-css(font-size, @font-size__base);
+        }
+    }
+    .sale-button {
+        a {
+            .lib-css(font-size,@font-size__xs_s);
+        }
+    }
+
 }
+
+
 
 //
 //  Desktop
@@ -445,6 +534,36 @@
 
     .category-text {
         p {
+            .lib-css(font-size, @font-size__base);
+        }
+    }
+
+    .sale {
+        padding: 0;
+        height: 150px;
+        background-position: 0% 40%;
+    }
+
+    .sale-button {
+        .lib-vendor-prefix-grid-justify-self(flex-end);
+        padding-right: 20%;
+    }
+
+    .sale-text {
+        padding-left: 20%;
+        text-align: left;
+        h3 {
+            .lib-css(font-size, @font-size__l_xl);
+            .lib-css(font-weight, @font-weight-semibold);
+        }
+        h5 {
+            .lib-css(font-size, @font-size__base);
+            .lib-css(font-weight, @font-weight-regular);
+        }
+    }
+
+    .sale-button {
+        a {
             .lib-css(font-size, @font-size__base);
         }
     }
