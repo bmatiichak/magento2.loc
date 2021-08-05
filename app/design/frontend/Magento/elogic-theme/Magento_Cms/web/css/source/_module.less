@@ -199,7 +199,7 @@
         .lib-vendor-box-align(center);
         .lib-css(background, url('https://i.ibb.co/J2T8NXR/image.png'));
         background-size: cover;
-        margin: @indent__l 0;
+        margin: @indent__l 0 ceil(@indent__xl*2) 0;
     }
 
     .sale-button {
@@ -227,10 +227,6 @@
 
 
     // CATEGORY GRID
-
-    .category-product-container {
-        padding: @indent__l 0 @indent__xl 0;
-    }
 
     .category-products-title h2 {
         .lib-css(font-size, @font-size__l_xl);
@@ -647,21 +643,6 @@
 
     .category-products {
         .lib-vendor-prefix-display(flex);
-    }
-
-    .category-product-container {
-        &:nth-child(1) {
-            padding-right: @indent__s_m;
-        }
-
-        &:nth-child(2) {
-            padding: @indent__m @indent__s_m @indent__xl @indent__s_m;
-        }
-
-        &:nth-child(3) {
-            padding-left: @indent__s_m;
-        }
-
     }
 }
 
