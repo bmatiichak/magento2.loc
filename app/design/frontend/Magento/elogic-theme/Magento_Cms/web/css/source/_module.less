@@ -56,7 +56,7 @@
     .banner-text {
         h1 {
             .lib-css(font-size, @font-size__xl_xl);
-            margin-bottom: 10px;
+            margin-bottom: @indent__s;
         }
     }
 
@@ -90,7 +90,7 @@
             text-transform: uppercase;
             text-decoration: none;
             border-bottom: 1px solid @color-elogic-black;
-            padding-bottom: 0.5rem;
+            padding-bottom: @indent__xs;
         }
     }
 
@@ -121,7 +121,7 @@
 //____________________________________
 
 .content-container {
-    margin: 40px auto 70px auto;
+    margin: @indent__xl auto 70px auto;
 }
 
 .categories {
@@ -143,12 +143,12 @@
     h2 {
         .lib-css(font-weight, @font-weight-semibold);
         letter-spacing: 0.15rem;
-        padding-bottom: 10px;
+        padding-bottom: @indent__s;
     }
 }
 
 .btn-category {
-    padding-top: 1.5rem;
+    padding-top: @indent__s_m;
 }
 
 //              OUR PRODUCTS
@@ -158,16 +158,16 @@
 .products_title {
     text-transform: uppercase;
     position: relative;
-    margin: 30px 0;
+    margin: @indent__l 0;
     .description_title {
-        padding-bottom: 20px;
+        padding-bottom: @indent__l;
     }
     h2 {
         .lib-font-size(@font-size__xl_s);
         .lib-css(font-weight, @font-weight-semibold);
         .lib-css(color, @color-elogic-black);
         letter-spacing: 1px;
-        margin-bottom: 5px;
+        margin-bottom: @indent__xs;
     }
 }
 
@@ -181,40 +181,6 @@
     left: 0;
 }
 
-
-
-
-// & when (@media-common = true) {
-//     .products-grid {
-//         .products-items .widget-product-grid {
-//             .lib-vendor-prefix-grid-display(grid);
-//             .lib-vendor-prefix-grid-template-columns(1fr 1fr 1fr 1fr);
-//             gap: 30px;    
-//         }
-//     }
-
-//     .product-item {
-//         width: 100%;
-//         height: auto;
-//     }
-
-// }
-
-// .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-
-// }
-
-// .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-
-// }
-
-// .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-
-// }
-
-// .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
-
-// }
 //
 //  Mobile @screen__m (big mobile) from 480 to 767
 //  _____________________________________________
@@ -227,7 +193,7 @@
     .banner-text {
         h1 {
             .lib-css(font-size, @font-size__xl_l);
-            margin-bottom: 10px;
+            margin-bottom: @indent__s;
         }
     }
 
@@ -249,7 +215,7 @@
     }
 
     .btn-banner {
-        margin-top: 20px;
+        margin-top: @indent__base;
     }
 
     .content-container {
@@ -277,16 +243,13 @@
     }
 
     .btn-category {
-        padding-top: 1rem;
+        padding-top: @indent__s;
     }
 }
 
 //
 //  Mobile @screen__s (mobile regular) up to 480
 //  _____________________________________________
-
-// .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xs) {
-// }
 
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
@@ -320,7 +283,7 @@
     .banner-text {
         h1 {
             .lib-css(font-size, @font-size__xl_s);
-            margin-bottom: 40px;
+            margin-bottom: @indent__xl;
         }
     }
 
@@ -406,7 +369,7 @@
     }
 
     .products_title {
-        margin: 40px auto;
+        margin: @indent__xl auto;
         width: 90%;
     }
 }
@@ -419,7 +382,7 @@
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
     .btn-banner {
-        padding-top: 5rem;
+        padding-top: floor(@indent__m*2);
     }
 
     .banner_container {
@@ -470,7 +433,7 @@
 
     .category {
         h2 {
-            padding-bottom: 5px;
+            padding-bottom: @indent__xs;
         }
     }
 }
