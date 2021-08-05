@@ -45,10 +45,6 @@
         text-transform: uppercase;
         letter-spacing: 0.15rem;
         transition: all 0.2s ease;
-        -webkit-transition: all 0.2s ease;
-        -moz-transition: all 0.2s ease;
-        -ms-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
     }
 
     h2 {
@@ -58,7 +54,7 @@
     .banner-text {
         h1 {
             .lib-css(font-size, @font-size__xl_xl);
-            margin-bottom: 10px;
+            margin-bottom: @indent__s;
         }
     }
 
@@ -73,10 +69,6 @@
         .lib-css(color, @color-elogic-black);
         text-transform: uppercase;
         transition: all 0.2s ease;
-        -webkit-transition: all 0.2s ease;
-        -moz-transition: all 0.2s ease;
-        -ms-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
     }
 
     .view-now {
@@ -92,7 +84,7 @@
             }
             text-decoration: none;
             border-bottom: 1px solid @color-elogic-black;
-            padding-bottom: 0.5rem;
+            padding-bottom: @indent__xs;
         }
     }
 
@@ -123,7 +115,7 @@
 //____________________________________
 
 .content-container {
-    margin: 40px auto;
+    margin: @indent__xl auto;
 }
 
 .categories {
@@ -145,12 +137,12 @@
     h2 {
         .lib-css(font-weight, @font-weight-semibold);
         letter-spacing: 0.15rem;
-        padding-bottom: 10px;
+        padding-bottom: @indent__s;
     }
 }
 
 .btn-category {
-    padding-top: 1.5rem;
+    padding-top: @indent__s_m;
 }
 
 //              OUR PRODUCTS
@@ -160,16 +152,16 @@
 .products_title {
     text-transform: uppercase;
     position: relative;
-    margin: 30px 0;
+    margin: @indent__l 0;
     .description_title {
-        padding-bottom: 20px;
+        padding-bottom: @indent__base;
     }
     h2 {
         .lib-font-size(@font-size__xl_s);
         .lib-css(font-weight, @font-weight-semibold);
         .lib-css(color, @color-elogic-black);
         letter-spacing: 1px;
-        margin-bottom: 5px;
+        margin-bottom: @indent__xs;
     }
 }
 
@@ -191,21 +183,16 @@
 	.lib-vendor-prefix-grid-template-columns(1fr 1fr);
 	.lib-vendor-box-align(center);
     .lib-css(background, url('https://i.ibb.co/J2T8NXR/image.png'));
-    // background: linear-gradient( rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) ), url('https://i.ibb.co/BCM35Lm/bg.jpg');
 	background-size: cover;
-	margin: 30px 0;
+	margin: @indent__l 0;
 }
 
 .sale-button {
 	a {
 		text-decoration: 0;
 		border-bottom: 1px solid @color-elogic-black;
-		padding-bottom: 5px;
+		padding-bottom: @indent__xs;
 		transition: all 0.3s ease;
-		-webkit-transition: all 0.3s ease;
-		-moz-transition: all 0.3s ease;
-		-ms-transition: all 0.3s ease;
-		-o-transition: all 0.3s ease;
 		&:hover {
 			.lib-css(color, @color-elogic-gray-main);
 			border-bottom: 1px solid @color-elogic-gray-main;
@@ -230,7 +217,7 @@
     .banner-text {
         h1 {
             .lib-css(font-size, @font-size__xl_l);
-            margin-bottom: 10px;
+            margin-bottom: @indent__s;
         }
     }
 
@@ -252,7 +239,7 @@
     }
 
     .btn-banner {
-        margin-top: 20px;
+        margin-top: @indent__base;
     }
 
     .content-container {
@@ -280,7 +267,7 @@
     }
 
     .btn-category {
-        padding-top: 1rem;
+        padding-top: @indent__s;
     }
 
     .sale {
@@ -335,7 +322,7 @@
     }
     .sale-button {
         padding: 0;
-        padding-bottom: 10px;
+        padding-bottom: @indent__s;
         .lib-vendor-prefix-grid-justify-self(auto);
         a {
             .lib-css(font-size, @font-size__base);
@@ -347,9 +334,6 @@
 //
 //  Mobile @screen__xs (mobile regular) up to 480
 //  _____________________________________________
-
-// .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xs) {
-// }
 
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
@@ -383,7 +367,7 @@
     .banner-text {
         h1 {
             .lib-css(font-size, @font-size__xl_s);
-            margin-bottom: 40px;
+            margin-bottom: @indent__xl;
         }
     }
 
@@ -474,7 +458,7 @@
     }
 
     .products_title {
-        margin: 40px auto;
+        margin: @indent__xl auto;
         width: 90%;
     }
 
@@ -508,7 +492,7 @@
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
     .btn-banner {
-        padding-top: 5rem;
+        padding-top: floor(@indent__m*2);
     }
 
     .banner_container {
@@ -589,7 +573,7 @@
 
     .category {
         h2 {
-            padding-bottom: 5px;
+            padding-bottom: @indent__xs;
         }
     }
 }

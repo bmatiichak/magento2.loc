@@ -20,14 +20,14 @@
 & when (@media-common = true) {
     .block-content {
         .products-grid {
-            margin-top: 30px;
+            margin-top: @indent__l;
         }
     }
 
     .product-items {
         .lib-vendor-prefix-display(flex);
         .lib-vendor-prefix-flex-wrap(wrap);
-        justify-content: space-between;
+        .lib-vendor-justify-content(space-between);
         list-style: none;
         padding: 0;
         margin:0;
@@ -50,13 +50,13 @@
     }
 
     .product-item-details {
-        margin: 30px 0;   
+        margin: @indent__l 0;   
         text-align: center;
     }
 
     .price-box {
         .lib-css(font-family, @font-family-oswald);
-        margin-top: 10px;
+        margin-top: @indent__s;
     }
 
     .product-item-actions,
@@ -110,24 +110,42 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break = @screen__m) {
-    .page-layout-1column .block.widget .products-grid .product-item {
-        margin-left: 0;
-        width: calc((100% - 4%) / 3);
-    }
+    .page-layout-1column {
+        .block.widget {
+            .products-grid {
+                .product-item {
+                    margin-left: 0;
+                    width: calc((100% - 4%) / 3);
+                }
+            }
+        }
+    }   
 }
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break = @screen__s) {
-    .page-layout-1column .block.widget .products-grid .product-item {
-        margin-left: 0;
-        width: calc((100% - 4%) / 2);
-    }
+    .page-layout-1column {
+        .block.widget {
+            .products-grid {
+                .product-item {
+                    margin-left: 0;
+                    width: calc((100% - 4%) / 2);
+                }
+            }
+        }
+    }   
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
-    .page-layout-1column .block.widget .products-grid .product-item {
-        width: 90%;
-        margin: 0 auto;
-    }
+    .page-layout-1column {
+        .block.widget {
+            .products-grid {
+                .product-item {
+                    width: 90%;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }   
 }
 
 //
@@ -135,37 +153,67 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-    .page-layout-1column .block.widget .block-content .products-grid .product-item {
-        width: calc((100% - 6%) / 3);
-    }
 
-    .page-layout-1column .block.widget .block-content .products-grid .product-item:nth-child(3n+1) {
-        margin-left: 0;
-    }
+    .page-layout-1column {
+        .block.widget {
+            .block-content {
+                .products-grid {
+                    .product-item {
+                        width: calc((100% - 6%) / 3);
+                    }
+                    .product-item:nth-child(3n+1) {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }  
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
-    .page-layout-1column .block.widget .block-content .products-grid .product-item {
-        width: calc((100% - 6%) / 4);
-    }
 
-    .page-layout-1column .block.widget .block-content .products-grid .product-item:nth-child(3n+1) {
-        margin-left: 0;
-    }
-
-    .page-layout-1column .block.widget .block-content .products-grid .product-item {
-        margin-left: 0;
-    }
+    .page-layout-1column {
+        .block.widget {
+            .block-content {
+                .products-grid {
+                    .product-item {
+                        width: calc((100% - 6%) / 4);
+                        margin-left: 0;
+                    }
+                    .product-item:nth-child(3n+1) {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }  
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
-    .page-layout-1column .block.widget .block-content .products-grid .product-item {
-        width: calc((100% - 6%) / 4);
-    }
+
+    .page-layout-1column {
+        .block.widget {
+            .block-content {
+                .products-grid {
+                    .product-item {
+                        width: calc((100% - 6%) / 4);
+                    }
+                }
+            }
+        }
+    }  
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__lg) {
-    .page-layout-1column .block.widget .block-content .products-grid .product-item {
-        width: calc((100% - 6%) / 4);
-    }
+    .page-layout-1column {
+        .block.widget {
+            .block-content {
+                .products-grid {
+                    .product-item {
+                        width: calc((100% - 6%) / 4);
+                    }
+                }
+            }
+        }
+    }  
 }
