@@ -37,16 +37,14 @@
     }
 
     h1,
-    h2 {
+    h2,
+    h3,
+    h5 {
         .lib-css(font-weight, @font-weight-semibold);
         .lib-css(color, @color-elogic-black);
         text-transform: uppercase;
         letter-spacing: 0.15rem;
         transition: all 0.2s ease;
-        -webkit-transition: all 0.2s ease;
-        -moz-transition: all 0.2s ease;
-        -ms-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
     }
 
     h2 {
@@ -69,11 +67,8 @@
 
     a {
         .lib-css(color, @color-elogic-black);
+        text-transform: uppercase;
         transition: all 0.2s ease;
-        -webkit-transition: all 0.2s ease;
-        -moz-transition: all 0.2s ease;
-        -ms-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
     }
 
     .view-now {
@@ -87,7 +82,6 @@
                 .lib-css(color, @color-elogic-gray-main);
                 border-bottom: 1px solid @color-elogic-gray-main;
             }
-            text-transform: uppercase;
             text-decoration: none;
             border-bottom: 1px solid @color-elogic-black;
             padding-bottom: @indent__xs;
@@ -121,7 +115,7 @@
 //____________________________________
 
 .content-container {
-    margin: @indent__xl auto 70px auto;
+    margin: @indent__xl auto;
 }
 
 .categories {
@@ -160,7 +154,7 @@
     position: relative;
     margin: @indent__l 0;
     .description_title {
-        padding-bottom: @indent__l;
+        padding-bottom: @indent__base;
     }
     h2 {
         .lib-font-size(@font-size__xl_s);
@@ -181,8 +175,37 @@
     left: 0;
 }
 
+//              SALE
+//________________________________________
+
+.sale {
+	.lib-vendor-prefix-grid-display(grid);
+	.lib-vendor-prefix-grid-template-columns(1fr 1fr);
+	.lib-vendor-box-align(center);
+    .lib-css(background, url('https://i.ibb.co/J2T8NXR/image.png'));
+	background-size: cover;
+	margin: @indent__l 0;
+}
+
+.sale-button {
+	a {
+		text-decoration: 0;
+		border-bottom: 1px solid @color-elogic-black;
+		padding-bottom: @indent__xs;
+		transition: all 0.3s ease;
+		&:hover {
+			.lib-css(color, @color-elogic-gray-main);
+			border-bottom: 1px solid @color-elogic-gray-main;
+		}
+		&:active {
+			.lib-css(color, @color-elogic-gray-main);
+			border-bottom: 1px solid @color-elogic-gray-main;
+		}
+	}
+}
+
 //
-//  Mobile @screen__m (big mobile) from 480 to 767
+//  Mobile @screen__m (big mobile) from 480(640) to 767
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
@@ -245,12 +268,71 @@
     .btn-category {
         padding-top: @indent__s;
     }
+
+    .sale {
+        background-position: 0% 18%;
+        padding: 0;
+        height: 150px;
+    }
+
+    .sale-text {
+        padding-left: 20%;
+        h3 {
+            .lib-css(font-size, @font-size__l_xl);
+        }
+        h5 {
+            .lib-css(font-weight, @font-weight-regular);
+        }
+    }
+
+
+    .sale-button {
+        .lib-vendor-prefix-grid-justify-self(flex-end);
+        padding-right: 20%;
+        a {
+            .lib-css(font-size, @font-size__base);
+        }
+    }
+
 }
 
 //
-//  Mobile @screen__s (mobile regular) up to 480
+//  Mobile @screen__s (mobile big) 480 to 640
 //  _____________________________________________
 
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {
+    .sale {
+        .lib-vendor-prefix-grid-template-columns(1fr);
+        background-position: 0% 10%;
+        place-items: center;
+        text-align: center;
+        height: 200px;
+    }
+    .sale-text {
+        padding: 0;
+        .lib-vendor-prefix-grid-justify-self(auto);
+        h3 {
+            .lib-css(font-size, @font-size__l_xl);
+        }
+        h5 {
+            .lib-css(font-size, @font-size__base);
+            .lib-css(font-weight, @font-weight-regular);
+        }
+    }
+    .sale-button {
+        padding: 0;
+        padding-bottom: @indent__s;
+        .lib-vendor-prefix-grid-justify-self(auto);
+        a {
+            .lib-css(font-size, @font-size__base);
+        }
+    }
+
+}
+
+//
+//  Mobile @screen__xs (mobile regular) up to 480
+//  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
     .banner {
@@ -298,6 +380,11 @@
         width: 100%;
         margin: 0;
         position: relative;
+    }
+
+    .sale-container {
+        width: 90%;
+        margin: 0 auto;
     }
 
     .categories {
@@ -372,7 +459,28 @@
         margin: @indent__xl auto;
         width: 90%;
     }
+
+    .sale {
+        padding: 5% 5%;
+    }
+    
+    .sale-text {
+        h3 {
+            .lib-css(font-size, @font-size__s_l);
+        }
+        h5 {
+            .lib-css(font-size, @font-size__base);
+        }
+    }
+    .sale-button {
+        a {
+            .lib-css(font-size,@font-size__xs_s);
+        }
+    }
+
 }
+
+
 
 //
 //  Desktop
@@ -408,6 +516,36 @@
 
     .category-text {
         p {
+            .lib-css(font-size, @font-size__base);
+        }
+    }
+
+    .sale {
+        padding: 0;
+        height: 150px;
+        background-position: 0% 40%;
+    }
+Categories
+    .sale-button {
+        .lib-vendor-prefix-grid-justify-self(flex-end);
+        padding-right: 20%;
+    }
+
+    .sale-text {
+        padding-left: 20%;
+        text-align: left;
+        h3 {
+            .lib-css(font-size, @font-size__l_xl);
+            .lib-css(font-weight, @font-weight-semibold);
+        }
+        h5 {
+            .lib-css(font-size, @font-size__base);
+            .lib-css(font-weight, @font-weight-regular);
+        }
+    }
+
+    .sale-button {
+        a {
             .lib-css(font-size, @font-size__base);
         }
     }
