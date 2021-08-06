@@ -6,6 +6,10 @@
                 <width>435</width>
                 <height>540</height>
             </image>
+            <image id="hover_product_list" type="hover">
+                <width>435</width>
+                <height>540</height>    
+            </image>
         </images>
     </media>
 </view>
