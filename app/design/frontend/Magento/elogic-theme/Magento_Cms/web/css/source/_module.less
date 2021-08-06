@@ -51,10 +51,6 @@
         text-transform: uppercase;
         letter-spacing: 0.15rem;
         transition: all 0.2s ease;
-        -webkit-transition: all 0.2s ease;
-        -moz-transition: all 0.2s ease;
-        -ms-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
     }
 
     h2 {
@@ -79,10 +75,6 @@
         .lib-css(color, @color-elogic-black);
         text-transform: uppercase;
         transition: all 0.2s ease;
-        -webkit-transition: all 0.2s ease;
-        -moz-transition: all 0.2s ease;
-        -ms-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
     }
 
     .view-now {
@@ -96,7 +88,6 @@
                 .lib-css(color, @color-elogic-gray-main);
                 border-bottom: 1px solid @color-elogic-gray-main;
             }
-
             text-decoration: none;
             border-bottom: 1px solid @color-elogic-black;
             padding-bottom: @indent__xs;
@@ -127,19 +118,17 @@
     //            Categories
     //____________________________________
 
-    .content-container {
-        margin: @indent__xl auto;
-    }
+//            Categories
+//____________________________________
 
-    .categories {
-        .lib-vendor-prefix-grid-display(grid);
-        gap: 30px;
-    }
+.content-container {
+    margin: @indent__xl auto;
+}
 
-    .category {
-        .lib-css(background-color, @color-elogic-gray-categories);
-        .lib-vendor-prefix-grid-display(grid);
-    }
+.categories {
+    .lib-vendor-prefix-grid-display(grid);
+    gap: 30px;
+}
 
     .category-text {
         .lib-vendor-prefix-grid-align-self(center);
@@ -154,88 +143,74 @@
         }
     }
 
-    .btn-category {
-        padding-top: @indent__s_m;
+.category {
+    h2 {
+        .lib-css(font-weight, @font-weight-semibold);
+        letter-spacing: 0.15rem;
+        padding-bottom: @indent__s;
     }
 
-    //              OUR PRODUCTS
-    //________________________________________
+.btn-category {
+    padding-top: @indent__s_m;
+}
+
+//              OUR PRODUCTS
+//________________________________________
 
 
-    .products_title {
-        text-transform: uppercase;
-        position: relative;
-        margin: @indent__l 0;
-
-        .description_title {
-            padding-bottom: @indent__base;
-        }
-
-        h2 {
-            .lib-font-size(@font-size__xl_s);
-            .lib-css(font-weight, @font-weight-semibold);
-            .lib-css(color, @color-elogic-black);
-            letter-spacing: 1px;
-            margin-bottom: @indent__xs;
-        }
+.products_title {
+    text-transform: uppercase;
+    position: relative;
+    margin: @indent__l 0;
+    .description_title {
+        padding-bottom: @indent__base;
     }
-
-    .products_title:after {
-        .lib-css(background, @color-elogic-black);
-        content: "";
-        width: 30px;
-        height: 3px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
+    h2 {
+        .lib-font-size(@font-size__xl_s);
+        .lib-css(font-weight, @font-weight-semibold);
+        .lib-css(color, @color-elogic-black);
+        letter-spacing: 1px;
+        margin-bottom: @indent__xs;
     }
+}
 
-    //              SALE
-    //________________________________________
+.products_title:after {
+    .lib-css(background, @color-elogic-black);
+    content: "";
+    width: 30px;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 
-    .sale {
-        .lib-vendor-prefix-grid-display(grid);
-        .lib-vendor-prefix-grid-template-columns(1fr 1fr);
-        .lib-vendor-box-align(center);
-        .lib-css(background, url('https://i.ibb.co/J2T8NXR/image.png'));
-        background-size: cover;
-        margin: @indent__l 0 ceil(@indent__xl*2) 0;
-    }
+//              SALE
+//________________________________________
 
-    .sale-button {
-        a {
-            text-decoration: 0;
-            border-bottom: 1px solid @color-elogic-black;
-            padding-bottom: @indent__xs;
-            transition: all 0.3s ease;
-            -webkit-transition: all 0.3s ease;
-            -moz-transition: all 0.3s ease;
-            -ms-transition: all 0.3s ease;
-            -o-transition: all 0.3s ease;
+.sale {
+	.lib-vendor-prefix-grid-display(grid);
+	.lib-vendor-prefix-grid-template-columns(1fr 1fr);
+	.lib-vendor-box-align(center);
+    .lib-css(background, url('https://i.ibb.co/J2T8NXR/image.png'));
+	background-size: cover;
+	margin: @indent__l 0;
+}
 
-            &:hover {
-                .lib-css(color, @color-elogic-gray-main);
-                border-bottom: 1px solid @color-elogic-gray-main;
-            }
-
-            &:active {
-                .lib-css(color, @color-elogic-gray-main);
-                border-bottom: 1px solid @color-elogic-gray-main;
-            }
-        }
-    }
-
-
-    // CATEGORY GRID
-
-    .category-products-title h2 {
-        .lib-css(font-size, @font-size__l_xl);
-    }
-
-    hr {
-        border-top: 1px solid @color-elogic-gray-subtle;
-    }
-
+.sale-button {
+	a {
+		text-decoration: 0;
+		border-bottom: 1px solid @color-elogic-black;
+		padding-bottom: @indent__xs;
+		transition: all 0.3s ease;
+		&:hover {
+			.lib-css(color, @color-elogic-gray-main);
+			border-bottom: 1px solid @color-elogic-gray-main;
+		}
+		&:active {
+			.lib-css(color, @color-elogic-gray-main);
+			border-bottom: 1px solid @color-elogic-gray-main;
+		}
+	}
 }
 
 
@@ -319,11 +294,9 @@
 
     .sale-text {
         padding-left: 20%;
-
         h3 {
             .lib-css(font-size, @font-size__l_xl);
         }
-
         h5 {
             .lib-css(font-weight, @font-weight-regular);
         }
@@ -333,7 +306,6 @@
     .sale-button {
         .lib-vendor-prefix-grid-justify-self(flex-end);
         padding-right: 20%;
-
         a {
             .lib-css(font-size, @font-size__base);
         }
@@ -353,26 +325,21 @@
         text-align: center;
         height: 200px;
     }
-
     .sale-text {
         padding: 0;
         .lib-vendor-prefix-grid-justify-self(auto);
-
         h3 {
             .lib-css(font-size, @font-size__l_xl);
         }
-
         h5 {
             .lib-css(font-size, @font-size__base);
             .lib-css(font-weight, @font-weight-regular);
         }
     }
-
     .sale-button {
         padding: 0;
         padding-bottom: @indent__s;
         .lib-vendor-prefix-grid-justify-self(auto);
-
         a {
             .lib-css(font-size, @font-size__base);
         }
@@ -383,7 +350,6 @@
 //
 //  Mobile @screen__xs (mobile regular) up to 480
 //  _____________________________________________
-
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
     .banner {
@@ -440,12 +406,15 @@
         position: relative;
     }
 
+    .sale-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
     .categories {
         margin-top: 0;
         gap: 0;
-
         &::before {
-            .lib-css(background-image, linear-gradient(to right, transparent, @color-elogic-black, transparent));
             content: "";
             position: absolute;
             top: 0;
@@ -513,26 +482,24 @@
 
     .products_title {
         margin: @indent__xl auto;
-        width: 100%;
+        width: 90%;
     }
 
     .sale {
         padding: 5% 5%;
     }
-
+    
     .sale-text {
         h3 {
             .lib-css(font-size, @font-size__s_l);
         }
-
         h5 {
             .lib-css(font-size, @font-size__base);
         }
     }
-
     .sale-button {
         a {
-            .lib-css(font-size, @font-size__xs_s);
+            .lib-css(font-size,@font-size__xs_s);
         }
     }
 
@@ -548,7 +515,7 @@
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
     .btn-banner {
-        padding-top: floor(@indent__m * 2);
+        padding-top: floor(@indent__m*2);
     }
 
     .banner_container {
@@ -588,7 +555,7 @@
         height: 150px;
         background-position: 0% 40%;
     }
-
+Categories
     .sale-button {
         .lib-vendor-prefix-grid-justify-self(flex-end);
         padding-right: 20%;
@@ -597,12 +564,10 @@
     .sale-text {
         padding-left: 20%;
         text-align: left;
-
         h3 {
             .lib-css(font-size, @font-size__l_xl);
             .lib-css(font-weight, @font-weight-semibold);
         }
-
         h5 {
             .lib-css(font-size, @font-size__base);
             .lib-css(font-weight, @font-weight-regular);
