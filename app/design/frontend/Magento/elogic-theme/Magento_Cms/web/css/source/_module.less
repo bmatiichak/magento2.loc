@@ -162,7 +162,7 @@
     //________________________________________
 
 
-    .products_title {
+    .block-title {
         text-transform: uppercase;
         position: relative;
         margin: @indent__l 0;
@@ -180,7 +180,7 @@
         }
     }
 
-    .products_title:after {
+    .block-title:after {
         .lib-css(background, @color-elogic-black);
         content: "";
         width: 30px;
@@ -235,6 +235,52 @@
     hr {
         border-top: 1px solid @color-elogic-gray-subtle;
     }
+
+    // BLOG & NEWS
+
+    .news-blog-wrapper {
+        .lib-vendor-prefix-grid-display(grid);
+        gap: 30px;
+    }
+    .blog-title {
+        margin: @indent__base+@indent__xs 0 0;
+        padding-bottom: @indent__s_m;
+        a {
+            .lib-css(font-size, @font-size__base);
+            .lib-css(color, @color-elogic-black);
+            .lib-css(font-weight, @font-weight-semibold);
+            text-decoration: none;
+            line-height: 1.5;
+        }
+    }
+    .blog-image {
+        img {
+            max-width: 100%;
+        }
+    }
+    .date-wrapper {
+        .lib-vendor-prefix-display(flex);
+        .fa-calendar-alt {
+            .lib-css(color, @color-elogic-gray-main);
+            .lib-css(font-size,@font-size__base);
+            margin-right: @indent__s;
+            margin-top: 2px;
+            &::before {
+                content: @icon-elogic-calendar;
+            }
+        }
+        .date {
+            .lib-css(color, @color-elogic-gray-main);
+            .lib-css(font-size, @font-size__xs_s);
+            position: relative;
+        }
+    }
+    .short-descr {
+        margin-top: @indent__s_m;
+        .lib-css(font-size,@font-size__base);
+        line-height: 1.5;
+    }
+
 
 }
 
@@ -337,6 +383,14 @@
         a {
             .lib-css(font-size, @font-size__base);
         }
+    }
+
+    .news-blog-wrapper {
+        .lib-vendor-prefix-grid-template-columns(1fr 1fr);
+    }
+
+    .blog-post:nth-child(3) {
+        display: none;
     }
 
 }
@@ -536,6 +590,14 @@
         }
     }
 
+    .news-blog-wrapper {
+        .lib-vendor-prefix-grid-template-columns(1fr);
+    }
+
+    .blog-post:nth-child(2),
+    .blog-post:nth-child(3) {
+        display: none;
+    }
 }
 
 
@@ -614,6 +676,14 @@
             .lib-css(font-size, @font-size__base);
         }
     }
+
+    .news-blog-wrapper {
+        .lib-vendor-prefix-grid-template-columns(1fr 1fr);
+    }
+
+    .blog-post:nth-child(3) {
+        display: none;
+    }
 }
 
 // FROM 1023 to 1200
@@ -643,6 +713,14 @@
 
     .category-products {
         .lib-vendor-prefix-display(flex);
+    }
+
+    .news-blog-wrapper {
+        .lib-vendor-prefix-grid-template-columns(1fr 1fr 1fr);
+    }
+
+    .blog-post:nth-child(3) {
+        display: block;
     }
 }
 
