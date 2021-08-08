@@ -1,0 +1,63 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .newsletter {
+        .lib-css(background-color, @color-elogic-gray-categories);
+        width: 100%;
+
+
+        .label {
+            &:extend(.abs-visually-hidden all);
+        }
+
+    }
+}
+
+// 
+//  Mobile
+//
+
+// up to 480
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
+
+}
+
+
+// up to 640
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {
+
+}
+
+// up to 767
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+// up to 1023
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
+
+// up to 1200
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+}
+
+// up to 1440
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+
+}
+
+
