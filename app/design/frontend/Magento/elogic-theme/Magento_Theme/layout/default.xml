@@ -7,5 +7,14 @@
     <referenceBlock name="footer_links" remove="true" />
     <referenceBlock name="copyright" remove="true" />
 
+    <referenceContainer name="footer">
+        <block class="Magento\Cms\Block\Block" name="my_footer_links">
+            <arguments>
+                <argument name="block_id" xsi:type="string">my_footer_links</argument>
+            </arguments>
+        </block>
+    </referenceContainer>
+
+
 </body>
 </page>

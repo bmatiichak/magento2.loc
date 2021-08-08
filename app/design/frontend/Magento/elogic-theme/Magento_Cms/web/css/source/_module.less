@@ -20,14 +20,25 @@
             max-width: 1920px;
             padding-left: 0;
             padding-right: 0;
+            
         }
 
-            .page-main > .page-title-wrapper .page-title {
-        display: none;
-    }
+        .page-main > .page-title-wrapper .page-title {
+            display: none;
+        }
 
         .nav-sections {
             margin-bottom: 0;
+        }
+
+        .page-wrapper {
+            .page-footer {
+                .footer.content {
+                    max-width: 1920px;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
         }
     }
 
@@ -38,6 +49,21 @@
             }
         }
     }
+
+    .page-footer {
+        .footer.content {
+            border-top: none;
+
+            .links {
+                display: initial;
+            }
+
+            .block {
+                float: none;
+            }
+        }
+    }
+
 
 
 
@@ -348,6 +374,14 @@
             text-decoration: none;
             text-transform: capitalize;
             transition: all 0.2s ease;
+        }
+    }
+
+    // NEWSLETTER
+
+    .newsletter {
+        .content-container {
+            margin: 0 auto;
         }
     }
 

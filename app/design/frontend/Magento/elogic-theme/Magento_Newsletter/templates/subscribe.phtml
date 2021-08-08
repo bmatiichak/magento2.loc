@@ -10,7 +10,7 @@
         <div class="newsletter-wrapper">
             <div class="newsletter-title">
                 <h2>keep updated</h2>
-                <div class="descr-newsletter"><?= $block->escapeHtml(__('Sign up for our newletter to recevie updates an exlusive offers')) ?></div>
+                <div class="descr-newsletter"><?= $block->escapeHtml(__('Sign up for our newsletter to receive updates and exlusive offers')) ?></div>
             </div>
             <div class="content">
                 <form class="form subscribe" novalidate action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>" method="post" data-mage-init='{"validation": {"errorClass": "mage-error"}}' id="newsletter-validate-detail">
@@ -20,7 +20,7 @@
                                 <span class="label">
                                     <?= $block->escapeHtml(__('Sign Up for Our Newsletter:')) ?>
                                 </span>
-                                <input name="email" type="email" id="newsletter" placeholder="<?= $block->escapeHtml(__('TEST CHANGE')) ?>" data-mage-init='{"mage/trim-input":{}}' data-validate="{required:true, 'validate-email':true}" />
+                                <input name="email" type="email" id="newsletter" placeholder="<?= $block->escapeHtml(__('Enter your email')) ?>" data-mage-init='{"mage/trim-input":{}}' data-validate="{required:true, 'validate-email':true}" />
                             </label>
                         </div>
                     </div>
