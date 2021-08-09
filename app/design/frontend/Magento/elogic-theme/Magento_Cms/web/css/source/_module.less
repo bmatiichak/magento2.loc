@@ -315,15 +315,12 @@
             display: inline-block;
             line-height: 30px;
             padding: 0 @indent__xs;
+
             &::before {
-                content: "";
-                display: block;
-                width: 1168px;
-                position: absolute;
-                top: 50%;
-                border-top: 1px solid @color-elogic-gray-brands;
                 left: 100%;
             }
+
+            &::before,
             &::after {
                 content: "";
                 display: block;
