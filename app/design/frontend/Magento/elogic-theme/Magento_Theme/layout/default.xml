@@ -13,6 +13,11 @@
                 <argument name="block_id" xsi:type="string">my_footer_links</argument>
             </arguments>
         </block>
+        <block class="Magento\Cms\Block\Block" name="my_footer_copyright">
+            <arguments>
+                <argument name="block_id" xsi:type="string">my_footer_copyright</argument>
+            </arguments>
+        </block>
     </referenceContainer>
 
 
