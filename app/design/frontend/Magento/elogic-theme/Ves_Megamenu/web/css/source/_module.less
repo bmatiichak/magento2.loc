@@ -1,0 +1,287 @@
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    #store\.menu {
+        .lib-css(background-color, @color-elogic-white);
+
+        .ves-megamenu .nav-item.active>a {
+            .lib-css(background, 0 0);
+            .lib-css(color, @color-elogic-black);
+        }
+
+        .wes-megamenu {
+            & > a {
+                transform: all .4s ease 0s;
+            }
+        }
+
+        .nav-item > a,
+        .nav-item.current > a {
+            border-left: none;
+        }
+
+        .arm-chair {
+            .item-footer {
+                margin-top: 0;
+            }
+            .level1.parent {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+
+        .mega-col {
+            .lib-css(background-color, @color-elogic-black);
+            &.mega-col-level-2 {
+                padding: 6px 8px;
+            }
+        }
+
+
+
+        .navigation {
+            .lib-vendor-prefix-display(flex);
+            justify-content: center;
+
+            .nav-item.subhover>.submenu {
+
+                .lib-css(background, @color-elogic-black);
+
+                .submenu-inner {
+                    padding: 0;
+                }
+
+                .item-content {
+
+                    .mega-col.mega-col-3.mega-col-level-1.col-xs-12 {
+                        .lib-vendor-prefix-display(flex);
+                    }
+                }
+            }
+
+            .nav-item.arm-chair > .submenu {
+                margin: 0 auto;
+                border-radius: 0;
+                padding: @indent__xl @indent__l;
+                .lib-css(font-weight, @font-weight-regular);
+                width: 1200px;
+                left: -442px;
+
+                .item-header {
+                    margin: 0;
+                    padding: 0;
+                    border: none;
+                    .widget.block {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+
+            .nav-item.arm-chair {
+                .level1,
+                .level2 {
+                    &:first-child > a {
+                        margin-top: 0;
+                    }
+                    & > a {
+                        padding: 8px @indent__xs;
+                        &:hover {
+                            text-decoration:underline;
+                        }
+                    }
+                }
+
+                .level1 {
+                    padding: 0 @indent__xs;
+                    & > a {
+                        span {
+                            text-transform:uppercase;
+                            .lib-css(font-weight, @font-weight-semibold);
+                        }
+                    }
+                }
+
+                .level2 {
+                    &:first-child > a {
+                        margin-top: @indent__s_m;
+                    }
+                }
+            }
+
+
+            .level0 {
+                margin-right: ceil(@indent__base + 5);
+
+                &>a {
+
+                    padding: @indent__base 0;
+                    .lib-css(font-size, @font-size__base);
+                    .lib-css(font-weight, @font-weight-regular);
+                    letter-spacing: 1px;
+
+                }
+            }
+
+            .level0.current>a {
+                .lib-css(background-color, @color-elogic-white);
+                .lib-css(color, @color-elogic-black);
+            }
+
+            .level0.current:hover>a span {
+                .lib-css(color, @color-elogic-gray-main);
+            }
+
+            .level1,
+            .level2 {
+                &:first-child > a {
+                    margin-top: @indent__s_m;
+                }
+                & > a {
+                    .lib-css(background-color, @color-elogic-black);
+                    .lib-css(color, @color-elogic-input-border);
+                    .lib-css(font-weight, @font-weight-light);
+                    padding: 0 @indent__l @indent__m @indent__m*2;
+                    letter-spacing: 0.25px;
+
+                    &:hover {
+                        .lib-css(background-color, @color-elogic-black);
+
+                        span {
+                            &::before {
+                                left: 1px;
+                            }
+                            padding: 0 @indent__xs 0 @indent__s_m;
+                        }
+                    }
+                    
+                    span {
+                        .lib-css(font-size, @font-size__base);
+                        text-transform: capitalize;
+                        padding: 0 @indent__s 0 0;
+                        display: block;
+                        position: relative;
+                        overflow: hidden;
+                        transition: padding .3s ease;
+                        line-height: normal;
+
+                        &::before {
+                            .lib-css(color, @color-elogic-white);
+                            .lib-css(font-size, @font-size__xs);
+                            .lib-css(font-family, @font-family-awesome);
+                            .lib-css(font-weight, @font-weight-awesome);
+                            content: @icon-elogic-circle;
+                            top: 50%;
+                            left: -15px;
+                            position: absolute;
+                            transition: left .25s cubic-bezier(.54, .49, 0, 1.75);
+                            transform: translateY(-50%);
+                            // opacity: 0;
+                        }
+                    }
+                }
+            }
+
+            .level1.parent {
+                &::after {
+                    content: "\f105";
+                    font: normal normal normal 14px/1 FontAwesome;
+                    position: absolute;
+                    right: 15px;
+                    top: 0;
+                    line-height: 22px;
+                }
+                &:hover {
+                    &::after {
+                        .lib-css(color, @color-elogic-white);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.item-sidebar {
+    .widget.block {
+        margin: 0;
+    }
+}
+
+.megamenu-img-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.megamenu-tab {
+    margin-bottom: 40px;
+}
+
+.megamenu-tab-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    place-items: center;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    .megamenu-tab-item {
+        display: flex;
+        align-items: center;
+        .megamenu-icon {
+            margin-right: @indent__s_m;
+            .fas {
+                width: 50px;
+                height: 50px;
+                font-size: 16px;
+                text-align: center;
+                line-height: 50px;
+                color: #222;
+                background: #fff;
+                border-radius: 100%;
+                display: inline-block;
+            }
+        }
+        .megamenu-text {
+            h4 {
+                color: #fff;
+                font-size: 17px;
+                margin: 0;
+                line-height: normal;
+            }
+        }
+    }
+}
+.nav-item.arm-chair {
+    .item-footer {
+        .widget.block {
+            margin:0;
+            .megamenu-footer {
+                padding-top: @indent__l;
+                margin-top: @indent__l;
+                border-top: 1px solid rgba(186,147,62,.3);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+//
+//  Tablet
+//  _____________________________________________
+@media (min-width: @screen__m) and (max-width: @screen__l) {}
+
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {}

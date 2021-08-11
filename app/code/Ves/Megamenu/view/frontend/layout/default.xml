@@ -44,7 +44,7 @@
 		<referenceBlock name="store.menu">
 			<block class="Ves\Megamenu\Block\Menu" name="catalog.topnav" template="Ves_Megamenu::topmenu.phtml">
 				<arguments>
-					<argument name="alias" xsi:type="string">top-menu</argument>
+					<argument name="alias" xsi:type="string">elogic_megamenu</argument>
 				</arguments>
 			</block>
 		</referenceBlock>

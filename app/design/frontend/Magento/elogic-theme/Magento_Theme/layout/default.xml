@@ -6,6 +6,16 @@
 
     <referenceBlock name="footer_links" remove="true" />
     <referenceBlock name="copyright" remove="true" />
+    <referenceBlock name="header.panel.wrapper" remove="true" />
+
+
+    <referenceContainer name="header-wrapper">
+        <container name="header.wrapper" as="header_wrapper" label="Header Wrapper" htmlTag="div" htmlClass="header-wrapper content-container" before="-"/>
+    </referenceContainer>
+
+    <referenceContainer name="header.wrapper">
+        <container name="header.actions" as="header_actions" label="Header Actions" htmlTag="div" htmlClass="header-actions" after="-"/>
+    </referenceContainer>
 
     <referenceContainer name="footer">
         <block class="Magento\Cms\Block\Block" name="my_footer_links">
@@ -20,6 +30,8 @@
         </block>
     </referenceContainer>
 
+    <move element="logo" destination="header.wrapper" before="-" />
+    <move element="top.search" destination="header.actions" after="-" />
 
 </body>
 </page>
