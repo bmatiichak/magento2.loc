@@ -1,0 +1,21 @@
+<?php
+/**
+ * add collapsible buttons for header
+ */
+
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+<div class="collapse-buttons">
+    <a class="arrow collapsed"></a>
+</div>
+
+<script type="text/x-magento-init">
+  {
+    ".collapse-buttons": {
+      "collapse": {
+        "trigger": "a.arrow",
+        "press": ".header-actions"
+      }
+    }
+  }
+</script>
