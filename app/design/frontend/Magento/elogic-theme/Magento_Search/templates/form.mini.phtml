@@ -63,15 +63,13 @@ $configProvider = $block->getData('configProvider');
     </div>
 </div>
 
-<script>
-    require([
-        'jquery'
-    ], function ($) {
-        'use strict';
-        $( document ).ready(function() {
-            $('.block-search .dropdown-toggle > .top-search').click(function(event){
-                $('.block-search .minisearch').slideToggle();
-            });
-        });
-    });
+<script type="text/x-magento-init">
+  {
+    ".header-wrapper": {
+      "dropdown": {
+        "trigger": ".block-search .dropdown-toggle > .top-search",
+        "toggle": ".block-search .minisearch"
+      }
+    }
+  }
 </script>

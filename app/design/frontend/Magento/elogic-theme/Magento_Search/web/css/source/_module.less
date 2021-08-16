@@ -18,26 +18,6 @@
             margin-bottom: 0;
         }
 
-        .label {
-            // .lib-icon-font(
-            //     @_icon-font-content: @icon-search,
-            //     @_icon-font-size: 35px,
-            //     @_icon-font-line-height: 33px,
-            //     @_icon-font-color: @header-icons-color,
-            //     @_icon-font-color-hover: @header-icons-color-hover,
-            //     @_icon-font-color-active: @header-icons-color-hover,
-            //     @_icon-font-text-hide: true
-            // );
-
-            &.active {
-                + .control {
-                    input {
-                        position: static;
-                    }
-                }
-            }
-        }
-
         .actions {
             .action.search {
                 &:disabled {
@@ -105,6 +85,18 @@
     .dropdown-toggle {
         .lib-vendor-prefix-display(flex);
         .lib-vendor-justify-content(flex-end);
+        .fa-search {
+            &::before {
+                transition: all .4s ease;
+                .lib-css(color, @color-elogic-black);
+                cursor: pointer;
+            }
+            &:hover {
+                &::before {
+                    .lib-css(color, @color-elogic-gray-main);
+                }
+            }
+        }
     }
 }
 
@@ -113,22 +105,104 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-    .block-search {
-        .block-content {
-            margin-bottom: 0;
-        }
+    .block-search.label.active + .control input {
+        position: absolute;
     }
+    .block-search {
+        .label {
+            display: none;
+        }
+        form, form.active {
+            .control {
+                border-top: 0;
+                clear:unset;
+                margin: 0;
+                padding: 0;
+            }
+            input {
+                .lib-input-placeholder(@color-elogic-input-placeholder);
+                margin: 0;
+                padding: 0 45px 0 25px;
+                height: 100%;
+                width: 330px;
+                top:0;
+                left:0;
+                border: 1px solid @color-elogic-black;
+                .lib-css(background-color, @color-elogic-black);
+                .lib-css(color, @color-elogic-gray-main);
 
-    form#search_mini_form {
-        top: 100%;
-        left: -200px;
-        width: 300px;
+                &:focus {
+                    box-shadow:none;
+                }
+                .label::before {
+                    margin: 0 13px 0 0;
+                }
+            }
+        }
+        form#search_mini_form {
+            top: 90%;
+            right: 5%;
+        }
+
+        .actions {
+            .action.search {
+                display: grid;
+                padding: 0 25px;
+                transition: all .3s ease;
+                position: absolute;
+                z-index: 1;
+                height: 100%;
+                top: 0;;
+                right: 1px;
+                border: 1px solid @color-elogic-black;
+                place-items: center;
+                .lib-css(background-color, @color-elogic-black);
+                span {
+                    display: block;
+                    border: 0;
+                    clip: rect(0, 0, 0, 0);
+                    height: 1px;
+                    margin: -1px;
+                    overflow: hidden;
+                    padding: 0;
+                    position: absolute;
+                    width: 1px;
+                }
+                &::before {
+                    .lib-css(font-family,@font-family-awesome);
+                    .lib-css(font-weight, @font-weight-awesome);
+                    .lib-css(font-size, @font-size__base);
+                    .lib-css(color, @color-elogic-white);
+                    content: @icon-elogic-search;
+                }
+                &:hover {
+                    .lib-css(background-color, @color-elogic-black-hover);
+                    &::before {
+                        .lib-css(color, @color-elogic-white);
+                    }
+                }
+            }
+        }
+
+        #search {
+            position: absolute;
+        }
     }
 }
 
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
     .block-search {
         margin-top: @indent__s;
+
+        form#search_mini_form {
+            min-width: 330px;
+            top: 135%;
+            right: 0;
+            input {
+                width: 280px;
+            }
+            
+        }
     }
 }
 

@@ -41,7 +41,7 @@ module.exports = {
         ],
         dsl: 'less'
     },
-    Magento_elogic: {
+    elogic: {
         area: 'frontend',
         name: 'Magento/elogic-theme',
         locale: 'en_US',
