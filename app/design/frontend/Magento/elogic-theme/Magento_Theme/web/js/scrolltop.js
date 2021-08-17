@@ -3,7 +3,7 @@
 define([
     'jquery',
     'matchMedia',
-    'jquery-ui-modules/widget',
+    'jquery/ui',
     'domReady!'
 ], function ($, mediaCheck) {
     'use strict';

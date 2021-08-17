@@ -1,9 +1,12 @@
+
 var config = {
     map: {
-        '*': {
-            'collapse': 'Magento_Theme/js/collapse',
-            'dropdown': 'Magento_Theme/js/dropdown',
-            'scrolltop': 'Magento_Theme/js/scrolltop'
+        "*": {
+            scrolltop: 'Magento_Theme/js/scrolltop',
+            collapse: 'Magento_Theme/js/collapse',
+            dropdown: 'Magento_Theme/js/dropdown',
+            footerdropdown: 'Magento_Theme/js/footerdropdown',
+            stickyheader: 'Magento_Theme/js/stickyheader'
         }
     }
 };

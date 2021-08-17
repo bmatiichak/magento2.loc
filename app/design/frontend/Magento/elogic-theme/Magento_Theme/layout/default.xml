@@ -12,10 +12,12 @@
 
     <referenceContainer name="footer-container">
         <block class="Magento\Framework\View\Element\Template" name="backtop.btn" template="Magento_Theme::html/scrolltop.phtml"/>
+        <block class="Magento\Framework\View\Element\Template" name="footer.dropdown" template="Magento_Theme::html/footerdropdown.phtml"/>
     </referenceContainer>
 
 
     <referenceContainer name="header-wrapper">
+        <block class="Magento\Framework\View\Element\Template" name="header.scroll" template="Magento_Theme::html/stickyheader.phtml"/>
         <container name="header.wrapper" as="header_wrapper" label="Header Wrapper" htmlTag="div" htmlClass="header-wrapper" before="-"/>
     </referenceContainer>
 
