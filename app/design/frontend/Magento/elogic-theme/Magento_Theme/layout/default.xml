@@ -41,7 +41,8 @@
     </referenceContainer>
 
     <move element="logo" destination="header.wrapper" before="-" />
-    <move element="authorization-link" destination="header.actions" before="collapse.button" />
+    <move element="collapse.buttons" destination="header.actions" before="-" />
+    <move element="authorization-link" destination="header.actions" after="collapse.buttons" />
     <move element="wish-list-link" destination="header.actions" before="minicart" />
     <move element="minicart" destination="header.actions" before="top.search" />
     <move element="top.search" destination="header.actions" after="-" />
