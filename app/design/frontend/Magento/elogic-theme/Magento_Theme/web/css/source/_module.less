@@ -515,12 +515,6 @@
         top: 7px;
     }
 
-    .page-header {
-        &.sticky + .page-main {
-            padding-top: 75px;
-        }
-    }
-
     .page-footer .footer.content {
         .switcher-store {
             .lib-css(background, @footer__background-color);
@@ -737,10 +731,6 @@
         border: 0;
         margin-bottom: 0;
 
-        &.sticky + .page-main {
-            padding-top: 150px;
-        }
-
         .panel.wrapper {
             border-bottom: 1px solid @secondary__color;
             .lib-css(background-color, @header-panel__background-color);
@@ -929,12 +919,6 @@
 }
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__ml) {
-
-    .page-header {
-        &.sticky + .page-main {
-            padding-top: 110px;
-        }
-    }
 
     .header-wrapper {
         .lib-vendor-prefix-grid-template-columns(2fr 5fr 2fr);
