@@ -1,0 +1,161 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .newsletter {
+        .lib-css(background-color, @color-elogic-gray-categories);
+        width: 100%;
+
+        &.block {
+            padding: 30px 0;
+        }
+
+        .newsletter-wrapper {
+            .lib-vendor-prefix-grid-display(grid);
+            .lib-vendor-prefix-grid-template-columns(1fr 1fr);
+
+            .newsletter-title {
+                h2 {
+                    .lib-css(font-size, @font-size__xl_l);
+                    letter-spacing: 2px;
+                    line-height: normal;
+                }
+                .descr-newsletter {
+                    line-height: 22px;
+                    .lib-css(font-weight, @font-weight-light);
+                }
+            }
+
+            .content {
+                .lib-vendor-prefix-display(flex);
+                .lib-vendor-box-align(center);
+                .lib-vendor-justify-content(center);
+                .label {
+                    &:extend(.abs-visually-hidden all);
+                }
+
+                .form {
+                    .lib-vendor-prefix-display(flex);
+                }
+
+                input[type="email"] {
+                    .lib-css(background, 0 0);
+                    .lib-css(color, @color-elogic-gray-main);
+                    border: 1px solid @color-elogic-input-border;
+                    max-width: 100%;
+                    height: 50px;
+                    line-height: 50px;
+                    box-shadow: none;
+                    padding-left: @indent__base;
+                    display: inline-block;
+                    &::placeholder {
+                        .lib-css(color, @color-elogic-input-placeholder);
+                    }
+                }
+
+                .actions {
+                    margin-left: @indent__xs;
+                    button {
+                        .lib-css(color, @color-elogic-white);
+                        .lib-css(background, @color-elogic-black);
+                        .lib-css(font-weight, @font-weight-regular);
+                        border-radius:0;
+                        padding: 17px 35px;
+                        border: 0;
+                        margin: 0;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        &:hover {
+                            .lib-css(background, #080808);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 
+//  Mobile
+//
+
+// up to 480
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
+    .newsletter {
+        .newsletter-wrapper {
+        width: 70%;
+        margin: 0 auto;
+
+            .newsletter-title {
+                h2 {
+                    .lib-css(font-size, @font-size__xl_s);
+                }
+            }
+
+            .form {
+                .lib-vendor-prefix-flex-direction(column);
+
+                input[type="email"] {
+                    padding: 0;
+                    text-align: center;
+                }
+                .actions {
+                    margin-left: 0;
+                    button {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+// up to 767
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .newsletter {
+        .newsletter-wrapper {
+            .lib-vendor-prefix-grid-template-columns(1fr);
+            place-items: center;
+            text-align: center;
+
+            .newsletter-title {
+                padding-bottom: @indent__base;
+            }
+
+            form {
+                .field.newsletter {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+// up to 1023
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
+
+// up to 1200
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+}
+
+// up to 1440
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+
+}
+
+

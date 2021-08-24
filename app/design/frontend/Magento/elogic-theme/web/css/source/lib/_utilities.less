@@ -465,7 +465,7 @@
             align-items: @_value;
 }
 
-.lib-vendor-justify-content (
+.lib-vendor-justify-content(
     @_value: stretch
 ) {
         -ms-justify-content: @_value;
@@ -525,6 +525,20 @@
 ) {
     -ms-grid-column: @_value;
     grid-column-start: @_value;
+}
+
+.lib-vendor-prefix-grid-row-end(
+    @_value: auto
+) {
+    -ms-grid-row: @_value;
+    grid-row-end: @_value;
+}
+
+.lib-vendor-prefix-grid-column-end(
+    @_value: auto
+) {
+    -ms-grid-column: @_value;
+    grid-column-end: @_value;
 }
 
 .lib-vendor-prefix-grid-align-self(

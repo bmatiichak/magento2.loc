@@ -1,0 +1,549 @@
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break = @screen__m) {
+    #store\.menu {
+        .lib-css(background-color, @color-elogic-white);
+
+        .ves-megamenu .nav-item.active>a {
+            .lib-css(background, 0 0);
+            .lib-css(color, @color-elogic-black);
+        }
+
+        .navigation {
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-justify-content(flex-start);
+            padding: 0;
+
+            .nav-item > a,
+            .nav-item.current > a {
+                border-left: none;
+            }
+
+
+            li {
+                position: relative;
+                transition: all .4s ease 0s;
+                &.nav-item.arm-chair {
+                    position: static !important; // to override megamenu inline position:relative on click
+                }
+            }
+
+            .nav-item.level0,
+            .level1.subhover {
+                .submenu {
+                    display: block;
+                }
+
+                > .submenu {
+                    display: block;
+                    transition: transform .5s ease,max-height .5s step-end,max-width .5s step-end,padding .5s step-end;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: scaleY(0);
+                    > a {
+                        transition: all .4s ease;
+                    }
+                }
+                &:hover {
+                    > .submenu {
+                        transform-origin: 0% 0%;
+                        opacity: 1;
+                        visibility: visible;
+                        transform: scaleY(1);
+                    }
+                }
+            }
+
+            .nav-item.subhover>.submenu {
+
+                .lib-css(background, @color-elogic-black);
+
+                .submenu-inner {
+                    padding: 0;
+                    .lib-css(background, @color-elogic-black);
+                }
+
+                .item-content {
+
+                    .mega-col.mega-col-3.mega-col-level-1.col-xs-12 {
+                        .lib-vendor-prefix-display(flex);
+                    }
+                }
+            }
+
+            .level0 {
+                margin-right: @indent__m;
+
+                &>a {
+
+                    padding: @indent__s_m 0;
+                    .lib-css(font-size, @font-size__base);
+                    .lib-css(font-weight, @font-weight-regular);
+                    letter-spacing: 1px;
+
+                }
+            }
+
+            .level0.current>a {
+                .lib-css(background-color, @color-elogic-white);
+                .lib-css(color, @color-elogic-black);
+            }
+
+            .level0.current:hover>a span {
+                .lib-css(color, @color-elogic-gray-main);
+            }
+
+            .level1,
+            .level2 {
+                &:first-child > a {
+                    margin-top: @indent__s_m;
+                }
+                & > a {
+                    .lib-css(background-color, @color-elogic-black);
+                    .lib-css(color, @color-elogic-input-border);
+                    .lib-css(font-weight, @font-weight-light);
+                    padding: 0 @indent__l @indent__m @indent__m*2;
+                    letter-spacing: 0.25px;
+
+                    &:hover {
+                        .lib-css(background-color, @color-elogic-black);
+
+                        span {
+                            &::before {
+                                left: 1px;
+                            }
+                            padding: 0 @indent__xs 0 @indent__s_m;
+                        }
+                    }
+                    
+                    span {
+                        .lib-css(font-size, @font-size__base);
+                        text-transform: capitalize;
+                        padding: 0 @indent__s 0 0;
+                        display: block;
+                        position: relative;
+                        overflow: hidden;
+                        transition: padding .3s ease;
+                        line-height: normal;
+
+                        &::before {
+                            .lib-css(color, @color-elogic-white);
+                            .lib-css(font-size, @font-size__xs);
+                            .lib-css(font-family, @font-family-awesome);
+                            .lib-css(font-weight, @font-weight-awesome);
+                            content: @icon-elogic-circle;
+                            top: 50%;
+                            left: -15px;
+                            position: absolute;
+                            transition: left .25s cubic-bezier(.54, .49, 0, 1.75);
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+            }
+
+            .level1.parent {
+                &::after {
+                    content: "\f105";
+                    font: normal normal normal 14px/1 FontAwesome;
+                    position: absolute;
+                    right: 15px;
+                    top: 0;
+                    line-height: 22px;
+                }
+                &:hover {
+                    &::after {
+                        .lib-css(color, @color-elogic-white);
+                    }
+                }
+            }
+
+            .level2 {
+                & > a {
+                    padding: 0 @indent__base @indent__m @indent__m*2;
+                }
+            }
+        }
+
+        .nav-item.arm-chair{
+            & > .submenu {
+                margin: 0 auto;
+                border-radius: 0;
+                padding: @indent__xl @indent__l;
+                .lib-css(font-weight, @font-weight-regular);
+                width: 139%;
+                left: 0;
+            }
+
+            .level1,
+            .level2 {
+                &:first-child > a {
+                    margin-top: 0;
+                }
+                & > a {
+                    padding: 8px @indent__xs;
+                    &:hover {
+                        text-decoration:underline;
+                    }
+                }
+            }
+
+            .level1 {
+                padding: 0 @indent__xs;
+                & > a {
+                    span {
+                        text-transform:uppercase;
+                        .lib-css(font-weight, @font-weight-semibold);
+                    }
+                    .lib-vendor-prefix-display(flex);
+                    .lib-vendor-justify-content(center);
+                }
+            }
+
+            .level1.parent {
+                &::after {
+                    display: none;
+                }
+            }
+
+            .level2 {
+                .item-content2 {
+                    .lib-vendor-prefix-grid-display(grid);
+                    .lib-vendor-prefix-grid-template-columns(1fr 1fr);
+                    place-items: center;
+                }
+            }
+
+            .mega-col {
+                .lib-css(background-color, @color-elogic-black);
+                &.mega-col-level-2 {
+                    padding: 6px 8px;
+                }
+            }
+        }
+
+        .item-header {
+
+            margin: 0;
+            padding: 0;
+            border: none;
+
+            .widget.block {
+                margin: 0;
+                padding: 0;
+            }
+
+            .megamenu-tab {
+                margin-bottom: 40px;
+                .megamenu-tab-container {
+                    .lib-vendor-prefix-grid-display(grid);
+                    .lib-vendor-prefix-grid-template-columns(1fr 1fr 1fr);
+                    gap: 10px;
+                    place-items: flex-start;
+                    padding-bottom: @indent__l;
+                    margin-bottom: @indent__l;
+                    border-bottom: 1px solid #eee;
+                    .megamenu-tab-item {
+                        .lib-vendor-prefix-display(flex);
+                        .lib-vendor-box-align(flex-start);
+                        .megamenu-icon {
+                            margin-right: @indent__s_m;
+                            .fas {
+                                .lib-css(font-size, @font-size__s_l);
+                                .lib-css(color, @color-elogic-black);
+                                .lib-css(background, @color-elogic-white);
+                                width: 50px;
+                                height: 50px;
+                                text-align: center;
+                                line-height: 50px;
+                                border-radius: 100%;
+                                display: inline-block;
+                            }
+                        }
+                        .megamenu-text {
+                            h4 {
+                                .lib-css(color, @color-elogic-white);
+                                .lib-css(font-size, @font-size__s_l);
+                                margin: 0;
+                                line-height: normal;
+                            }
+                            p {
+                                .lib-css(font-size, @font-size__xs_s);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .item-sidebar {
+            .widget.block {
+                margin: 0;
+            }
+
+            .megamenu-img-wrapper {
+                .lib-vendor-prefix-display(flex);
+                .lib-vendor-justify-content(center);
+                .lib-vendor-box-align(center);
+                .lib-vendor-prefix-flex-direction(column);
+                .megamenu-img {
+                    &:first-child {
+                        margin-bottom: @indent__base;
+                    }
+                    .lib-vendor-prefix-display(flex);
+                    .lib-vendor-justify-content(center);
+                    img {
+                        max-width: 70%;
+                    }
+                }
+            }
+        }
+
+        .item-footer {
+            margin-top: 0;
+            .widget.block {
+                margin:0;
+                .megamenu-footer {
+                    padding-top: @indent__l;
+                    margin-top: @indent__l;
+                    border-top: 1px solid rgba(186,147,62,.3);
+                    p {
+                        .lib-css(font-size, @font-size__xs_s);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// up to 1200
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__ml) {
+    #store\.menu {
+        .navigation {
+            justify-content: center;
+
+            .nav-item.arm-chair > .submenu {
+                width: 180%;
+                left: ~"calc(1vw - 50%)";
+
+                .level1 {
+                    & > a {
+                        .lib-vendor-justify-content(flex-start);
+                    }
+                }
+
+                .level2 {
+                    .lib-vendor-prefix-grid-template-columns(1fr);
+                    place-items: flex-start;
+                }
+                .megamenu-footer {
+                    p {
+                        .lib-css(font-size, @font-size__base);
+                    }
+                }
+            }
+        }
+
+        .item-header {
+            .megamenu-tab-container {
+                .megamenu-tab-item {
+                    .megamenu-text {
+                        h4 {
+                            .lib-css(font-size, @font-size__l_m);
+                        }
+                        p {
+                            .lib-css(font-size, @font-size__base);
+                        }
+                    }
+                }
+            }
+        }
+
+        .item-sidebar {
+            .megamenu-img-wrapper {
+                .lib-vendor-justify-content(space-evenly);
+                .lib-vendor-prefix-flex-direction(row);
+                .megamenu-img {
+                    &:first-child {
+                        margin-bottom: 0;
+                    }
+                    img {
+                        max-width: 90%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// up to 1440
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xl) {
+    #store\.menu {
+        .navigation {
+
+            .nav-item.arm-chair > .submenu {
+                width: 210%;
+                left: ~"calc(1vw - 65%)";
+            }
+        }
+    }
+}
+
+
+
+
+
+
+//
+//  Tablet
+//  _____________________________________________
+@media (min-width: @screen__m) and (max-width: @screen__l) {
+
+}
+
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .hidden-md {
+        .nav-item.parent > a:after {
+            display: none;
+        }
+    }
+
+    .nav-open {
+        .nav-sections {
+            .lib-css(background, @color-elogic-black);
+
+            .nav-sections-items {
+                padding: 0 @indent__base;
+
+                .nav-sections-item-title {
+                    .lib-visibility-hidden();
+                }
+                .nav-sections-item-content {
+                    margin-top: @indent__xl;
+                }
+            }
+        }
+
+        .ves-megamenu {
+            & > .navigation {
+
+                .submenu {
+                    overflow: hidden;
+                }
+
+                float: none;
+                .lib-css(background, @color-elogic-black);
+
+                .level0 {
+                    border-top: none;
+                    text-decoration: none;
+                }
+
+                .nav-item {
+                    .lib-css(background, @color-elogic-black);
+                    float: none !important; // to overrride important from megamenu
+                    width: auto;
+
+                    & > a {
+                        line-height: normal;
+                        .lib-css(font-size, @font-size__base);
+                        .lib-css(color, @color-elogic-input-border);
+                        .lib-css(background, @color-elogic-black);
+                        .lib-css(font-weight, @font-weight-light);
+                        border-bottom: 1px solid @color-elogic-gray-dark;
+                        padding: @indent__s_m @indent__base;
+                        
+                        &:hover {
+                            .lib-css(color, @color-elogic-gray-main);
+                            border-bottom: 1px solid @color-elogic-black;
+                        }
+                    }
+
+                    & .level1,
+                    & .level2 {
+                        & > a {
+                            line-height: normal;
+                            padding: 8px @indent__l;
+                            border-bottom:0;
+                            &:hover {
+                                .lib-css(background-color, @color-elogic-black);
+                            }
+                            
+                            span:first-child {
+                                .lib-css(font-size, @font-size__base);
+                                text-transform: uppercase;
+                                padding: 0 @indent__s 0 0;
+                                display: block;
+                                position: relative;
+                                overflow: hidden;
+                                line-height: normal;
+                            }
+                        }
+                    }
+
+                    & .level1 {
+                        & :first-child {
+                            & > a {
+                                margin-top: @indent__xs;
+                            }
+                        }
+                    }
+
+                    & .level1.parent {
+                        &::after {
+                            content: "\f105";
+                            font: normal normal normal 14px/1 FontAwesome;
+                            position: absolute;
+                            right: 15px;
+                            top: 0;
+                            line-height: 22px;
+                        }
+                        &:hover {
+                            &::after {
+                                .lib-css(color, @color-elogic-white);
+                            }
+                        }
+                    }
+                }
+                .opener,
+                .opener.item-active {
+                    .lib-css(font-family, @font-family-awesome);
+                    .lib-css(font-weight, @font-weight-awesome);
+                    .lib-css(background, @color-elogic-black);
+                }
+                .opener {
+                    &::before {
+                        content: @icon-elogic-arrow-closed;
+                    }
+                }
+                .opener.item-active {
+                    &::before {
+                        content: @icon-elogic-arrow-opened;
+                    }         
+                }
+
+                .level1 {
+                    .opener {
+                        line-height: 40px;
+                    }
+                }
+
+                li.level0 {
+                    &:last-child {
+                        border-bottom:none;
+                    }
+                }
+            }
+        }
+    }
+}
