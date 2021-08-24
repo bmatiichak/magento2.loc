@@ -47,6 +47,5 @@
     <move element="minicart" destination="header.actions" before="top.search" />
     <move element="top.search" destination="header.actions" after="-" />
 
-
 </body>
 </page>

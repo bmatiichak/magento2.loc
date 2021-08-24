@@ -24,6 +24,9 @@ define([
         },
 
         _create: function () {
+
+            $(this.options.template).accordion(this.options.accordionOptions);
+
             mediaCheck({
                 media: '(min-width: 767px)',
                 entry: function () {
