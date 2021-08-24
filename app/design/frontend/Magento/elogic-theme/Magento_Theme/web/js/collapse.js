@@ -11,7 +11,6 @@ define([
         },
 
         _create: function () {
-            console.log('widget created');
             $(this.options.trigger).click(()=> {
                 if ($(this.options.trigger).hasClass("collapsed")) {
                     $(this.options.press).css("transform","translateX(0)");
