@@ -7,6 +7,7 @@
     <referenceBlock name="footer_links" remove="true" />
     <referenceBlock name="copyright" remove="true" />
     <referenceBlock name="header.panel.wrapper" remove="true" />
+    <referenceBlock name="form.subscribe" remove="true" />
 
 
 
