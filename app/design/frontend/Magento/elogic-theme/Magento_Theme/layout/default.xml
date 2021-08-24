@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+    </head>
+    <body>
+
+    <referenceBlock name="footer_links" remove="true" />
+    <referenceBlock name="copyright" remove="true" />
+    <referenceBlock name="header.panel.wrapper" remove="true" />
+
+
+
+    <referenceContainer name="footer-container">
+        <block class="Magento\Framework\View\Element\Template" name="backtop.btn" template="Magento_Theme::html/scrolltop.phtml"/>
+        <block class="Magento\Framework\View\Element\Template" name="footer.dropdown" template="Magento_Theme::html/footerdropdown.phtml"/>
+    </referenceContainer>
+
+
+    <referenceContainer name="header-wrapper">
+        <block class="Magento\Framework\View\Element\Template" name="header.scroll" template="Magento_Theme::html/stickyheader.phtml"/>
+        <container name="header.wrapper" as="header_wrapper" label="Header Wrapper" htmlTag="div" htmlClass="header-wrapper" before="-"/>
+    </referenceContainer>
+
+    <referenceContainer name="header.wrapper">
+        <container name="header.actions" as="header_actions" label="Header Actions" htmlTag="div" htmlClass="header-actions" after="-">
+            <block class="Magento\Framework\View\Element\Template" name="collapse.buttons" template="Magento_Theme::html/collapse.phtml"/>
+        </container>
+    </referenceContainer>
+
+    <referenceContainer name="footer">
+        <block class="Magento\Cms\Block\Block" name="my_footer_links">
+            <arguments>
+                <argument name="block_id" xsi:type="string">my_footer_links</argument>
+            </arguments>
+        </block>
+        <block class="Magento\Cms\Block\Block" name="my_footer_copyright">
+            <arguments>
+                <argument name="block_id" xsi:type="string">my_footer_copyright</argument>
+            </arguments>
+        </block>
+    </referenceContainer>
+
+    <move element="logo" destination="header.wrapper" before="-" />
+    <move element="collapse.buttons" destination="header.actions" before="-" />
+    <move element="authorization-link" destination="header.actions" after="collapse.buttons" />
+    <move element="wish-list-link" destination="header.actions" before="minicart" />
+    <move element="minicart" destination="header.actions" before="top.search" />
+    <move element="top.search" destination="header.actions" after="-" />
+
+
+</body>
+</page>

@@ -1,0 +1,275 @@
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .block-search {
+        margin-bottom: 0;
+
+        .block {
+            &-title {
+                display: none;
+            }
+        }
+
+        .block-content {
+            margin-bottom: 0;
+        }
+
+        .actions {
+            .action.search {
+                &:disabled {
+                    opacity: 1;
+                }
+                &::before {
+                    .lib-css(font-family,@font-family-awesome);
+                    .lib-css(font-weight, @font-weight-awesome);
+                    .lib-css(font-size, @font-size__base);
+                    .lib-css(color, @color-elogic-white);
+                    content: @icon-elogic-search;
+                }
+                &:hover {
+                    &::before {
+                        .lib-css(color, @color-elogic-white);
+                    }
+                }
+            }
+        }
+
+
+        .control {
+            border-top: 1px solid @border-color__base;
+            clear: both;
+            margin: 0 -@layout__width-xs-indent -1px;
+            padding: 0 @layout__width-xs-indent;
+
+            .nested {
+                display: none;
+            }
+        }
+
+        input {
+            .lib-font-size(@font-size__s_l);
+            left: -300%;
+            margin: @indent__s_m 0;
+            position: absolute;
+            border: 1px solid @color-elogic-white;
+        }
+    }
+
+    form#search_mini_form {
+        .lib-font-size(@font-size__base);
+        .lib-css(background-color, @color-elogic-black);
+        min-width: 370px;
+        height: 43px;
+        line-height: 43px;
+        display: none;
+        position: absolute;
+        top: 135%;
+        right: 0;
+        z-index: 1000;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        text-align: left;
+        list-style: none;
+        left: auto;
+    }
+
+    .dropdown-menu {
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    }
+
+    .dropdown-toggle {
+        .lib-vendor-prefix-display(flex);
+        .lib-vendor-justify-content(flex-end);
+        .fa-search {
+            &::before {
+                transition: all .4s ease;
+                .lib-css(color, @color-elogic-black);
+                cursor: pointer;
+            }
+            &:hover {
+                &::before {
+                    .lib-css(color, @color-elogic-gray-main);
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block-search.label.active + .control input {
+        position: absolute;
+    }
+    .block-search {
+        .label {
+            display: none;
+        }
+        form, form.active {
+            .control {
+                border-top: 0;
+                clear:unset;
+                margin: 0;
+                padding: 0;
+            }
+            input {
+                .lib-input-placeholder(@color-elogic-input-placeholder);
+                margin: 0;
+                padding: 0 45px 0 @indent__m;
+                height: 100%;
+                width: 330px;
+                top:0;
+                left:0;
+                border: 1px solid @color-elogic-black;
+                .lib-css(background-color, @color-elogic-black);
+                .lib-css(color, @color-elogic-gray-main);
+
+                &:focus {
+                    box-shadow:none;
+                }
+                .label::before {
+                    margin: 0 13px 0 0;
+                }
+            }
+        }
+        form#search_mini_form {
+            top: 90%;
+        }
+
+        .actions {
+            .action.search {
+                display: grid;
+                padding: 0 @indent__m;
+                transition: all .3s ease;
+                position: absolute;
+                z-index: 1;
+                height: 100%;
+                top: 0;;
+                right: 1px;
+                border: 1px solid @color-elogic-black;
+                place-items: center;
+                .lib-css(background-color, @color-elogic-black);
+                span {
+                    display: block;
+                    border: 0;
+                    clip: rect(0, 0, 0, 0);
+                    height: 1px;
+                    margin: -1px;
+                    overflow: hidden;
+                    padding: 0;
+                    position: absolute;
+                    width: 1px;
+                }
+                &::before {
+                    .lib-css(font-family,@font-family-awesome);
+                    .lib-css(font-weight, @font-weight-awesome);
+                    .lib-css(font-size, @font-size__base);
+                    .lib-css(color, @color-elogic-white);
+                    content: @icon-elogic-search;
+                }
+                &:hover {
+                    .lib-css(background-color, @color-elogic-black-hover);
+                    &::before {
+                        .lib-css(color, @color-elogic-white);
+                    }
+                }
+            }
+        }
+
+        #search {
+            position: absolute;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .block-search {
+        margin-top: @indent__s;
+
+        form#search_mini_form {
+            min-width: 330px;
+            top: 135%;
+            right: 0;
+            input {
+                width: 280px;
+            }
+            
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block-search {
+        width: 10px;
+        z-index: 4;
+
+        .label {
+            &:extend(.abs-visually-hidden-desktop all);
+        }
+
+        .control {
+            border-top: 0;
+            margin: 0;
+            padding: 0 0 ceil(@indent__base + 5);
+        }
+
+        .nested {
+            display: block;
+            padding-top: @indent__xs;
+            position: absolute;
+        }
+
+        input {
+            .lib-input-placeholder(@color-elogic-input-placeholder);
+            margin: 0;
+            padding: 0 45px 0 @indent__m;
+            height: 43px;
+            position: static;
+            .lib-css(background-color, @color-elogic-black);
+            .lib-css(color, @color-elogic-gray-main);
+
+            &:focus {
+                box-shadow:none;
+            }
+        }
+
+        .actions {
+            .action.search {
+                .lib-vendor-prefix-grid-display(grid);
+                padding: 0 ceil(@indent__base + 5);
+                transition: all .3s ease;
+                position: absolute;
+                z-index: 1;
+                top: 1px;
+                right: 1px;
+                &::before {
+                    .lib-vendor-prefix-grid-align-self(center);
+                    .lib-vendor-prefix-grid-justify-self(flex-end);
+                    line-height: 41px;
+                }
+                &:hover {
+                    .lib-css(background-color, @color-elogic-black-hover);
+                }
+            }
+        }
+    }
+}
+
+& when (@media-target = 'desktop'), (@media-target = 'all') {
+    @media only screen and (min-width: @screen__ml) and (max-width: @screen__xl) {
+        .header>.navi {
+            margin-top: 35px;
+        }
+    }
+}

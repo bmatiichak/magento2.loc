@@ -1,0 +1,23 @@
+<?php
+//  added icon, removed escapehtml getLabel()
+?>
+<div class="wish-list" data-bind="scope: 'wishlist'">
+    <a <?= /* @noEscape */ $block->getLinkAttributes() ?>>
+        <i class="far fa-heart counter qty"></i>
+    </a>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "wishlist": {
+                        "component": "Magento_Wishlist/js/view/wishlist"
+                    }
+                }
+            }
+        }
+    }
+
+</script>
