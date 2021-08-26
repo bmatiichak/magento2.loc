@@ -3,7 +3,9 @@ var config = {
     map: {
         "*": {
             slick: 'js/vendor/slick.min',
+            select: 'js/vendor/select2.full',
             myslider: 'js/myslider',
+            myselect: 'js/myselect',
             footerdropdown: 'Magento_Theme/js/footerdropdown',
             scrolltop: 'Magento_Theme/js/scrolltop',
             collapse: 'Magento_Theme/js/collapse',
@@ -15,5 +17,8 @@ var config = {
         slick: {
             deps: ['jquery'],
         },
-    },
+        select: {
+            deps: ['jquery'],
+        }
+    }
 };
