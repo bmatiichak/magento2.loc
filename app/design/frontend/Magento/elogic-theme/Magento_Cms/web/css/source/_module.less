@@ -795,6 +795,25 @@
             margin-bottom: @indent__base;
         }
     }
+
+    // fixing whitespace in catalog-category-view of footer
+
+    .catalog-category-view {
+        .page-footer {
+            .content-container {
+                margin:0 auto;
+                padding:0;
+            }
+        }
+
+        .footer-links {
+            .title {
+                &:first-child {
+                    margin: 0 0 @indent__s_m 0;
+                }
+            }
+        }
+    }
 }
 //
 //  Mobile @screen__s (mobile big) 480 to 640
