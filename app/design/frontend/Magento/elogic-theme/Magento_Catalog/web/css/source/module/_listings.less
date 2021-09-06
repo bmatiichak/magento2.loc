@@ -19,6 +19,174 @@
 
 & when (@media-common =true) {
 
+    // General
+    .page-title-wrapper {
+        display: none;
+    }
+
+    .columns {
+        .sidebar-main {
+            padding: 0;
+        }
+    }
+
+    // Toolbar
+
+    .toolbar-products {
+        .modes {
+            margin:0;
+            .modes-mode {
+                border: none;
+                padding: 7px;
+                box-shadow: none;
+                border-radius:0;
+                .lib-css(background, transparent);
+                &:hover,
+                &.active {
+                    box-shadow:none;
+                    .lib-css(background, @color-elogic-black);
+                    &::before {
+                        .lib-css(color, @color-elogic-white);
+                    }
+                }
+            }
+            .mode-list {
+                margin-left: @indent__xs;
+            }
+        }
+        .toolbar-left {
+            float:left;
+        }
+        .toolbar-right {
+            float:right;
+        }
+        .toolbar-sorter {
+            margin-left: 7px;
+            position: relative;
+            .sorter-label {
+                position: absolute;
+                line-height: 2.3;
+            }
+            select {
+                visibility: hidden;
+            }
+        }
+        .toolbar-amount {
+            .lib-css(color, @color-elogic-black);
+            border-bottom: 1px solid @color-elogic-gray-main;
+            padding-bottom: @indent__s;
+            text-transform: uppercase;
+        }
+    }
+
+    // Select Styling
+
+    .catalog-category-view {
+        .select2-container {
+            transition: all .4s ease;
+
+            .select2-selection {
+                border: none;
+                background: transparent;
+                padding: @indent__s_m 0;
+                position: relative;
+
+                &:before {
+                    content: @icon-elogic-arrow-closed;
+                    .lib-css(font-family, @font-family-awesome);
+                    .lib-css(font-weight, @font-weight-awesome);
+                    .lib-css(color, @color-elogic-gray-main);
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                &__arrow {
+                    display: none;
+                }
+
+                .select2-selection__rendered {
+                    display: none;
+                }
+            }
+
+            &--open {
+                .lib-css(border-color, @color-elogic-black);
+
+                .select2-selection {
+                    &:before {
+                        content: @icon-elogic-arrow-up;
+                    }
+                }
+
+                .select2-dropdown {
+                    border: 1px solid @color-elogic-black;
+                    transition: .3s ease-in-out;
+
+                    .select2-results__options {
+                        li {
+                            margin: 0;
+                            .lib-css(background-color, @color-elogic-white);
+                            .lib-css(color, @color-elogic-black);
+                        }
+
+                        .select2-results__option {
+                            &--highlighted {
+                                .lib-css(color, @color-elogic-white);
+                                background-color: @color-elogic-gray-dark;
+                            }
+
+                            &--selected {
+                                .lib-css(background-color, @color-elogic-black);
+                                .lib-css(color, @color-elogic-white);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Breadcrumbs
+
+    .catalog-category-view .breadcrumbs {
+        padding: 0;
+        .items {
+            .item {
+                a {
+                    .lib-css(color, @color-elogic-gray-main);
+                    text-decoration: none;
+                    text-transform: capitalize;
+                }
+
+                &:hover {
+                    a {
+                        .lib-css(color, @color-elogic-black);
+                        text-decoration: underline;
+                    }
+                }
+
+                strong {
+                    .lib-css(color, @color-elogic-black);
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+
+    // Sidebar
+
+    .catalog-banner {
+        .banners-wrapper {
+            padding: 0;
+            width: 100%;
+        }
+        .slick-dots {
+            bottom:0;
+        }
+    }
+
     .product-item-info {
         .lib-vendor-prefix-display(flex);
         .lib-vendor-box-align(center);
