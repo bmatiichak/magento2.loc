@@ -509,6 +509,14 @@
         border: @tooltip__border-width solid @tooltip__border-color;
         padding: 10px;
     }
+
+    // Js Class for Header Collapsible
+
+    .header-wrapper {
+        .header-actions.collapsible-show {
+            transform:none;
+        }
+    }
 }
 
 //
@@ -592,13 +600,12 @@
                     .lib-css(font-weight, @font-weight-awesome);
                     cursor: pointer;
                     text-decoration: none;
-                }
-                .collapsed {
                     &::before {
                         content: '\f100';
                         .lib-css(font-family, @font-family-awesome);
                     }
                 }
+                
                 .opened {
                     &::before {
                         content: '\f101';
@@ -624,6 +631,7 @@
         position: relative;
         overflow-x: clip;
         .lib-vendor-prefix-grid-template-columns(1fr 5fr 2fr);
+
         .header-actions {
             transform: none;
             margin-right: 0;
@@ -699,7 +707,7 @@
         .logo {
             .lib-vendor-prefix-display(flex);
             .lib-vendor-justify-content(center);
-            margin: @indent__xs 0;
+            margin: 0;
             .lib-vendor-prefix-grid-column-start(2);
             .lib-vendor-prefix-grid-column-end(3);
             img {

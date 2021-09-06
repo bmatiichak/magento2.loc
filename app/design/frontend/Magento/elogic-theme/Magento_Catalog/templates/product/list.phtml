@@ -177,15 +177,20 @@ $_helper = $block->getData('outputHelper');
 
                                 <?php if ($viewMode === 'list'): ?>
                                     <div data-role="add-to-links" class="actions-secondary">
-                                        <?php if ($addToBlock = $block->getChildBlock('addto')): ?>
-                                            <?= $addToBlock->setProduct($_product)->getChildHtml() ?>
-                                        <?php endif; ?>
+                                    <a href="#" data-post='<?= /* @noEscape */ $block->getAddToWishlistParams($_product) ?>' class="action to-wish-list" data-action="add-to-wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </a>
+                                    <?php $compareHelper = $this->helper(\Magento\Catalog\Helper\Product\Compare::class); ?>
+                                    <a href="#" class="action to-compare" data-post='<?= /* @noEscape */ $compareHelper->getPostDataParams($_product) ?>'> 
+                                        <i class="fas fa-balance-scale"></i>
+                                    </a>
                                     </div>
-                                    <?= strpos($pos, $viewMode . '-secondary') ?
-                                        /* @noEscape */ $secureRenderer->renderStyleAsTag(
-                                            $position,
-                                            'product-item-info_' . $_product->getId() . ' div.actions-secondary'
-                                        ) : '' ?>
+
+                                <?= strpos($pos, $viewMode . '-secondary') ?
+                                /* @noEscape */ $secureRenderer->renderStyleAsTag(
+                                    $position,
+                                    'product-item-info_' . $_product->getId() . ' div.actions-secondary'
+                                ) : '' ?>
                                 <?php endif;?>
 
                             </div>
