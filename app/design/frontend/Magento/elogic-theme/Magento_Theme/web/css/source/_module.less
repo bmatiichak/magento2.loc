@@ -62,6 +62,7 @@
     }
 
     .page-wrapper {
+        overflow: hidden;
         .lib-vendor-prefix-display(flex);
         .lib-vendor-prefix-flex-direction(column);
         min-height: 100vh; // Stretch content area for sticky footer
@@ -156,12 +157,10 @@
     }
 
     .header-wrapper {
-        padding: @indent__s_m;
+        padding: @indent__s_m @indent__l;
         .lib-vendor-prefix-grid-display(grid);
         .lib-vendor-prefix-grid-template-columns(2fr 4fr 2fr);
         .lib-vendor-box-align(center);
-        margin:0 auto;
-        width: 90%;
         .logo {
             .lib-vendor-prefix-grid-column-start(1);
             .lib-vendor-prefix-grid-column-end(-1);
@@ -515,12 +514,6 @@
         top: 7px;
     }
 
-    .page-header {
-        &.sticky + .page-main {
-            padding-top: 75px;
-        }
-    }
-
     .page-footer .footer.content {
         .switcher-store {
             .lib-css(background, @footer__background-color);
@@ -608,6 +601,7 @@
     }
 
     .header-wrapper {
+        padding: @indent__s_m;
         position: relative;
         overflow-x: clip;
         .lib-vendor-prefix-grid-template-columns(1fr 5fr 2fr);
@@ -736,10 +730,6 @@
     .page-header {
         border: 0;
         margin-bottom: 0;
-
-        &.sticky + .page-main {
-            padding-top: 150px;
-        }
 
         .panel.wrapper {
             border-bottom: 1px solid @secondary__color;
@@ -930,12 +920,6 @@
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__ml) {
 
-    .page-header {
-        &.sticky + .page-main {
-            padding-top: 110px;
-        }
-    }
-
     .header-wrapper {
         .lib-vendor-prefix-grid-template-columns(2fr 5fr 2fr);
         .logo {
@@ -957,6 +941,7 @@
         &.content {
             .header-wrapper {
                 width: 80%;
+                margin: 0 auto;
             }
         }
     }
@@ -966,7 +951,12 @@
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__lg) {
 
-    .header-wrapper {
-        width: 70%;
+    .header {
+        &.content {
+            .header-wrapper {
+                width: 70%;
+                margin: 0 auto;
+            }
+        }
     }
 }

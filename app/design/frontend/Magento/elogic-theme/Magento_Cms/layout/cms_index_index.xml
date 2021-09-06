@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content.bottom">
+            <container name="newsletter-section" htmlTag="div" htmlClass="newsletter-block" before="footer">
+                <container name="newsletter-section-wrapper"  htmlTag="div" htmlClass="newslatter-wrapper" >
+                    <block class="Magento\Cms\Block\Block" name="my-custom-newsletter">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">my-custom-newsletter</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Newsletter\Block\Subscribe" name="homepage.form.subscribe" as="subscribe" after="-" template="Magento_Newsletter::subscribe.phtml" />
+                </container>
+            </container>
+        </referenceContainer>
+    </body>
+</page>
