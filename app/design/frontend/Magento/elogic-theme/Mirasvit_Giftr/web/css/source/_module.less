@@ -7,13 +7,13 @@
     #addto-giftr {
         .lib-vendor-prefix-display(flex);
         .lib-css(background, @color-elogic-white);
+        .lib-vendor-justify-content(center);
+        .lib-vendor-box-align(center);
         border: 1px solid @color-elogic-gray-main;
-        justify-content: center;
-        align-items: center;
         width: 180px;
         height: 40px;
         line-height: 40px;
-        transition: all .5s ease-out 0s;
+        transition: all .4s ease-out 0s;
         cursor: pointer;
 
         span {
@@ -21,11 +21,11 @@
         }
 
         span:before {
-            content: @icon-elogic-giftr;
             .lib-font-size(@font-size__xl);
             .lib-css(font-family, @font-family-awesome);
             .lib-css(font-weight, @font-weight-awesome);
             .lib-css(color, @color-elogic-black);
+            content: @icon-elogic-giftr;
             margin-right: @indent__s;
         }
     }
@@ -39,16 +39,149 @@
         }
 
         span:before {
-            content: @icon-elogic-giftr;
             .lib-font-size(@font-size__xl);
             .lib-css(font-family, @font-family-awesome);
             .lib-css(color, @color-elogic-white);
+            content: @icon-elogic-giftr;
             margin-right: @indent__s;
+        }
+    }
+
+
+    .modal__giftr {
+        .modal-inner-wrap {
+            border-radius: 5px;
+            margin: 25rem auto;
+            width: 600px;
+            .modal-header {
+                padding-top: 0;
+            }
+
+            .options-container{
+                .lib-vendor-prefix-display(flex);
+                .lib-vendor-prefix-flex-direction(column);
+                .lib-css(background, @color-elogic-black);
+                .lib-css(color, @color-elogic-white);
+                max-height: 0;
+                width: 100%;
+                opacity: 0;
+                transition: all 0.4s;
+                border-radius: 8px;
+                overflow: hidden;
+
+                order: 1;
+
+                &.active{
+                    max-height: 240px;
+                    opacity: 1;
+                }
+
+                &::-webkit-scrollbar{
+                    display:none;
+                }
+            }
+
+            .option{
+                transition: all .4s ease;
+                &:hover{
+                    .lib-css(background, @color-elogic-gray-dark);
+                }
+
+                span{
+                    cursor: pointer;
+                }
+
+                input{
+                    opacity:0;
+                    visibility:hidden;
+                }
+            }
+
+            .option,
+            .initial-select{
+                padding: 12px 24px;
+                cursor: pointer;
+            }
+
+            .initial-select{
+                .lib-css(background, @color-elogic-black);
+                .lib-css(color, @color-elogic-white);
+                border-radius: 8px;
+                margin-bottom: 8px;
+                position: relative;
+
+                order: 0;
+
+                &::after{
+                    .lib-css(font-weight, @font-weight-awesome);
+                    .lib-css(font-family, @font-family-awesome);
+                    content: @icon-elogic-arrow-popup;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    transform: rotate(0deg);
+
+                    position: absolute;
+                    height: auto;
+                    width: auto;
+                    right: 20px;
+
+                    transition: all 0.4s;
+                }
+
+                &.rotateArrow{
+                    &::after{
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            #confirm-add-to-registry{
+                .lib-css(color, @color-elogic-white);
+                .lib-css(background, @color-elogic-black);
+                .lib-css(font-weight, @font-weight-medium);
+                border-radius: 5px;
+                margin: @indent__base auto 0;
+                transition: all .4s ease;
+                display: block;
+                width: max-content;
+                cursor: pointer;
+                text-decoration: none;
+                text-transform: uppercase;
+                padding: @indent__s_m @indent__m;
+                &:hover {
+                    .lib-css(background, @color-elogic-gray-dark);
+                }
+            }
         }
     }
 }
 
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .modal__giftr.modal-slide {
+        left:0;
+        .modal-inner-wrap {
+            height: max-content;
+            width: 70%;
+            margin: 10% auto;
 
+            #confirm-add-to-registry {
+                margin: @indent__base 0 0;
+                width: auto;
+                padding: @indent__s @indent__base;
+                border-radius: 5px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .modal__giftr.modal-slide {
+        .modal-inner-wrap {
+            height: max-content;
+            width: 90%;
+            margin: 40% auto;
+        }
+    }
 }

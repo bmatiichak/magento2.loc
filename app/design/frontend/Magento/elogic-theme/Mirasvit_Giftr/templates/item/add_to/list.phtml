@@ -10,17 +10,39 @@
      data-mage-init='{"mygiftr":{}}'>
 
     <div class="registry-list" data-bind="visible: hasRegistries">
-        <div class="registries" data-bind="foreach: registries">
-            <label for="registry_>" class="label" data-bind="attr: { for: 'registry_' + value }">
-            <input type="checkbox" id="registry_" name="registries[]" value=""
-                   data-bind="checked: $parent.selected, value: value, attr: { id: 'registry_' + value }" />
+        <div class="registry-title">
+            <h3>Select Gift Registry</h3>
+        </div>
+
+
+        <div class="initial-select">
+            Select Category
+        </div>
+
+        <div class="registries options-container" data-bind="foreach: registries">
+            <label for="registry_>" class="label option" data-bind="attr: { for: 'registry_' + value }">
+                <input type="checkbox" id="registry_" name="registries[]" value=""
+                       data-bind="checked: $parent.selected, value: value, attr: { id: 'registry_' + value }" />
                 <span data-bind="text: label"></span>
             </label>
         </div>
-        <a id="confirm-add-to-registry" href="#" data-bind="click: addProduct"><?= __('Add') ?></a>
+
+        <a id="confirm-add-to-registry" href="#" data-bind="click: addProduct"><?= __('Add to Gift Registry') ?></a>
     </div>
 
     <div data-bind="visible: isMessageVisible()">
         <span data-bind="html: getMessage()"></span>
     </div>
 </div>
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "modalselect": {
+            "optionsContainer": ".options-container",
+            "optionsList": ".option",
+            "initialSelect": ".initial-select"
+        }
+    }
+}
+</script>
