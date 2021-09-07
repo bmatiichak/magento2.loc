@@ -1,0 +1,54 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    #addto-giftr {
+        .lib-vendor-prefix-display(flex);
+        .lib-css(background, @color-elogic-white);
+        border: 1px solid @color-elogic-gray-main;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        height: 40px;
+        line-height: 40px;
+        transition: all .5s ease-out 0s;
+        cursor: pointer;
+
+        span {
+            .lib-css(color, @color-elogic-black);
+        }
+
+        span:before {
+            content: @icon-elogic-giftr;
+            .lib-font-size(@font-size__xl);
+            .lib-css(font-family, @font-family-awesome);
+            .lib-css(font-weight, @font-weight-awesome);
+            .lib-css(color, @color-elogic-black);
+            margin-right: @indent__s;
+        }
+    }
+
+    #addto-giftr:hover {
+        .lib-css(background, @color-elogic-black);
+        text-decoration:none;
+
+        span {
+            .lib-css(color, @color-elogic-white);
+        }
+
+        span:before {
+            content: @icon-elogic-giftr;
+            .lib-font-size(@font-size__xl);
+            .lib-css(font-family, @font-family-awesome);
+            .lib-css(color, @color-elogic-white);
+            margin-right: @indent__s;
+        }
+    }
+}
+
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
