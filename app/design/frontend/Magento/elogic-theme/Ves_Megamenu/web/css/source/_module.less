@@ -449,6 +449,13 @@
                     text-decoration: none;
                 }
 
+                .nav-item.level0.active {
+                    & > a {
+                        border-left: 8px solid @color-elogic-white;
+                        border-bottom: 1px solid @color-elogic-gray-dark;
+                    }
+                }
+
                 .nav-item {
                     .lib-css(background, @color-elogic-black);
                     float: none !important; // to overrride important from megamenu

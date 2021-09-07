@@ -13,9 +13,11 @@ define([
             $(window).on('scroll',function(){
                 if ($(this).scrollTop() > $('.header.content').outerHeight()){
                     $('.page-header').addClass("sticky");
+                    $('.page-wrapper').css("paddingTop", $('.header.content').outerHeight());
                 }
                 else{
                     $('.page-header').removeClass("sticky");
+                    $('.page-wrapper').css("paddingTop", "0 ");
                 }
             });
         }

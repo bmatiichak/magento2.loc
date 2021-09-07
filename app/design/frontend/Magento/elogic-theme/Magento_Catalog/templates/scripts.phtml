@@ -1,0 +1,41 @@
+<?php /** init select */ ?>
+
+<script type="text/x-magento-init">
+    {
+    ".toolbar-sorter": {
+        "myselect": {
+            "template":"#sorter",
+            "sliderOptions":{}
+        }
+    }
+    }
+</script>
+
+<script type="text/x-magento-init">
+    {
+    ".field.limiter": {
+        "myselect": {
+            "template":".control #limiter",
+            "sliderOptions":{}
+        }
+    }
+    }
+</script>
+
+<script type="text/x-magento-init">
+    {
+    ".sidebar-main": {
+        "myslider": {
+            "selector":".banners-wrapper",
+            "sliderOptions":{
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "dots": true,
+                "arrows": false,
+                "autoplay": true,
+                "autoplaySpeed": 5000
+            }
+        }
+    }
+    }
+</script>

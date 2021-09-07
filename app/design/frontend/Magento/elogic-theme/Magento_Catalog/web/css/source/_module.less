@@ -960,6 +960,64 @@
             &:extend(.abs-revert-to-action-secondary all);
         }
     }
+
+
+    // Modal Category Page
+    .catalog-category-view {
+        .modal-inner-wrap {
+            border: 5px solid #999;
+            max-width: 65rem;
+            .modal-header {
+                padding-top: 0;
+                .action-close {
+                    &::before {
+                        .lib-css(color, @color-elogic-black);
+                    &:hover::before {
+                        .lib-css(color, @color-elogic-gray-main);
+                    }
+                    }
+                }
+            }
+            .modal-content,
+            .modal-footer {
+                padding:1.5rem 3rem;
+            }
+            .modal-footer {
+                .lib-vendor-prefix-display(flex);
+                .lib-vendor-box-align(center);
+                .lib-vendor-justify-content(center);
+                border-top: 1px solid #999;
+
+                button {
+                    .lib-css(font-weight, @font-weight-light);
+                    margin: 0 @indent__s;
+                    transition: all .4s ease;
+                    border-radius:0;
+                    text-transform:uppercase
+                }
+
+                .action-dismiss {
+                    .lib-css(color, @color-elogic-black);
+                    .lib-css(background, @color-elogic-white);
+                    border: 1px solid @color-elogic-black;
+                    &:hover {
+                        .lib-css(color, @color-elogic-gray-main);
+                        border: 1px solid @color-elogic-gray-main;
+                    }
+                }
+
+                .action-accept {
+                    .lib-css(color, @color-elogic-white);
+                    .lib-css(background, @color-elogic-black);
+                    border: 1px solid @color-elogic-black;
+                    &:hover {
+                        .lib-css(background, @color-elogic-gray-main);
+                        border: 1px solid @color-elogic-gray-main;
+                    }
+                }
+            }
+        }
+    }
 }
 
 //
