@@ -744,6 +744,8 @@
     }
 
     .footer-links-wrapper {
+        border-top: 1px solid @color-elogic-gray-subtle;
+        padding-top: @indent__s;
         .lib-vendor-prefix-grid-template-columns(1fr);
         .footer-links-group {
             .footer-links {
@@ -751,6 +753,22 @@
                     margin-bottom: @indent__s_m;
                 }
             }
+        }
+    }
+
+    .footer.content {
+        .content-container {
+            padding:0;
+        }
+    }
+
+    .footer-links-group {
+        padding: 0 @indent__s_m;
+    }
+
+    .catalog-category-view {
+        .footer-links-group {
+            padding: 0;
         }
     }
 
@@ -784,6 +802,10 @@
                 }
             }
         }
+
+        .title:first-child {
+            margin: 0 0 @indent__s_m 0;
+        }
     }
 
     .footer-copyright-container {
@@ -793,6 +815,25 @@
 
         .footer-link {
             margin-bottom: @indent__base;
+        }
+    }
+
+    // fixing whitespace in catalog-category-view of footer
+
+    .catalog-category-view {
+        .page-footer {
+            .content-container {
+                margin:0 auto;
+                padding:0;
+            }
+        }
+
+        .footer-links {
+            .title {
+                &:first-child {
+                    margin: 0 0 @indent__s_m 0;
+                }
+            }
         }
     }
 }
@@ -919,7 +960,7 @@
 
     .content-container {
         padding: 0 15px;
-        margin: @indent__l auto;
+        margin: @indent__l auto 0 auto;
     }
 
     .categories-container {
@@ -1207,6 +1248,10 @@
     .footer-links-wrapper {
         .footer-links-group {
             .footer-links {
+                ul {
+                    display:block !important; // override collapsible inline
+                }
+
                 .title h2 {
                     margin:@indent__xl 0 @indent__s_m 0;
                 }

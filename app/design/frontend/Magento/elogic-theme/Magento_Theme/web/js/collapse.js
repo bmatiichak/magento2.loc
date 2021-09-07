@@ -1,29 +1,22 @@
 define([
-  'jquery',
-  'jquery/ui'
+	'jquery',
+	'jquery/ui'
 ], function ($) {
-  'use strict';
+	'use strict';
 
-    $.widget('elogic.collapse', {
-        options: {
-            trigger: '',
-            press: '',
-        },
+	$.widget('elogic.collapse', {
+		options: {
+			trigger: '',
+			press: '',
+		},
 
-        _create: function () {
-            $(this.options.trigger).click(()=> {
-                if ($(this.options.trigger).hasClass("collapsed")) {
-                    $(this.options.press).css("transform","translateX(0)");
-                    $(this.options.trigger).removeClass("collapsed");
-                    $(this.options.trigger).addClass("opened");
-                } else {
-                    $(this.options.press).css("transform","translateX(90%)");
-                    $(this.options.trigger).removeClass("opened");
-                    $(this.options.trigger).addClass("collapsed");
-                }
-            });
-        },
-    });
+			$(this.options.trigger).click(() => {
+				$(this.options.trigger).toggleClass("opened");
+				$(this.options.press).toggleClass("collapsible-show");
+			});
 
-  return $.elogic.collapse;
+				return $.elogic.collapse;
+			}
+
+	});
 });
