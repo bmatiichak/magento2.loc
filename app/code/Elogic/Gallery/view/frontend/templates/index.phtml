@@ -1,0 +1,33 @@
+<?php
+/**
+ * Init Gallery Slider
+ */
+?>
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "myslider":{
+            "selector":".gallery-wrap",
+            "sliderOptions":{
+                "slidesToShow": 3,
+                "centerMode": true,
+                "arrows": true,
+                "dots":true,
+                "responsive": [
+                    {
+                        "breakpoint": 1200,
+                        "settings": {
+                            "slidesToShow": 1
+                        }
+                    }
+                ]
+            }
+        }
+
+    }
+}
+
+    
+
+</script>
