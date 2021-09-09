@@ -179,6 +179,13 @@
 
             .level1,
             .level2 {
+                & .active {
+                    > a {
+                        .lib-css(color, @color-elogic-white);
+                        .lib-css(font-weight, @font-weight-regular);
+                    }
+                }
+
                 &:first-child > a {
                     margin-top: 0;
                 }

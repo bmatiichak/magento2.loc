@@ -1,165 +1,214 @@
 & when (@media-common =true) {
-    .product-item-info {
-        .lib-vendor-prefix-display(flex);
-        .lib-vendor-box-align(center);
-        .lib-vendor-prefix-flex-direction(column);
-        position: relative;
-        text-transform: uppercase;
-
-        a:link,
-        a:visited {
-            .lib-css(color, @color-elogic-gray-main);
-        }
-
-        a:hover,
-        a:active {
-            .lib-css(color, @color-elogic-black);
-            text-decoration: none;
-        }
-
-        // IMAGE HOVER
-        // ____________________________
-
-        .hover-container {
+    .cms-index-index,
+    .catalog-category-view {
+        .product-item-info {
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-box-align(center);
+            .lib-vendor-prefix-flex-direction(column);
             position: relative;
-            width: 100%;
+            text-transform: uppercase;
 
-            a {
-                transition: all .4s ease 0s;
+            a:link,
+            a:visited {
+                .lib-css(color, @color-elogic-gray-main);
             }
 
-            .product-item-photo-hovered {
-                position: absolute;
-                top: 0;
-                left: 0;
-                opacity: 0;
-                display: block;
-                backface-visibility: hidden;
+            a:hover,
+            a:active {
+                .lib-css(color, @color-elogic-black);
+                text-decoration: none;
+            }
+
+            // IMAGE HOVER
+            // ____________________________
+
+            .hover-container {
+                position: relative;
                 width: 100%;
-                height: 100%;
-                transition: all 1s cubic-bezier(.19, 1, .22, 1) 0s;
-            }
-        }
 
-        &:hover {
-            .product-item-photo-hovered {
-                opacity: 1;
-                z-index: 1;
+                a {
+                    transition: all .4s ease 0s;
+                }
+
+                .product-item-photo-hovered {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                    display: block;
+                    backface-visibility: hidden;
+                    width: 100%;
+                    height: 100%;
+                    transition: all 1s cubic-bezier(.19, 1, .22, 1) 0s;
+                }
             }
 
-            .product-item-photo {
-                opacity: 0;
-            }
+            &:hover {
+                .product-item-photo-hovered {
+                    opacity: 1;
+                    z-index: 1;
+                }
 
-            .actions-primary {
-                opacity: 1;
-                visibility: visible;
-                transform: translateX(0);
-                transition: all .4s ease;
+                .product-item-photo {
+                    opacity: 0;
+                }
+
+                .actions-primary {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateX(0);
+                    transition: all .4s ease;
+                }
+
+                .price-box {
+                    transform: translateX(0);
+                    opacity: 0;
+                }
             }
 
             .price-box {
-                transform: translateX(0);
-                opacity: 0;
+                .lib-css(font-family, @font-family-oswald);
+                margin-top: @indent__s;
+            }
+
+            .actions-secondary {
+                margin: auto;
+                padding: 0;
+                text-align: center;
+                z-index: 11;
+                -webkit-transition: all .3s ease;
+                transition: all .3s ease;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+
+                .add-to-links {
+                    .lib-css(background, @color-elogic-white);
+                    list-style: none;
+                    padding: @indent__s_m 0;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(100%);
+                    transition: all .4s ease;
+
+                    li {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .fa-eye {
+                    &:before {
+                        .lib-css(color, @color-elogic-black);
+                        .lib-font-size(@font-size__s_l);
+                        .lib-css(font-family, @font-family-awesome);
+                        .lib-css(font-weight, @font-weight-regular);
+                        content: @icon-elogic-eye;
+                    }
+                }
+
+                .fa-heart {
+
+                    &:before {
+                        .lib-css(color, @color-elogic-black);
+                        .lib-font-size(@font-size__s_l);
+                        .lib-css(font-family, @font-family-awesome);
+                        .lib-css(font-weight, @font-weight-regular);
+                        content: @icon-elogic-wish;
+                        margin: 0;
+                    }
+
+                    &:before:hover {
+                        .lib-css(color, @color-elogic-gray-discounts);
+                        cursor: pointer;
+                    }
+
+                }
+
+                .fa-balance-scale {
+
+                    &:before {
+                        .lib-css(color, @color-elogic-black);
+                        .lib-font-size(@font-size__s_l);
+                        .lib-css(font-family, @font-family-awesome);
+                        .lib-css(font-weight, @font-weight-awesome);
+                        content: @icon-elogic-compare;
+                    }
+
+                    &:before:hover {
+                        .lib-css(color, @color-elogic-gray-discounts);
+                        cursor: pointer;
+                    }
+                }
+
+                .fa-eye,
+                .fa-heart,
+                .fa-balance-scale {
+                    .lib-css(color, @color-elogic-black);
+                    .lib-css(font-size, @font-size__base);
+                    display: block;
+                    line-height: 43px;
+                    height: 43px;
+                    width: 60px;
+                    border-radius: 0;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+
+                .fa-eye:hover,
+                .fa-heart:hover,
+                .fa-balance-scale:hover {
+                    cursor: pointer;
+
+                    &:before {
+                        .lib-css(color, @color-elogic-gray-main);
+                    }
+                }
             }
         }
 
-        .price-box {
-            .lib-css(font-family, @font-family-oswald);
-            margin-top: @indent__s;
-        }
-
-        .actions-secondary {
-            margin: auto;
-            padding: 0;
+        .product-item-details {
+            margin: @indent__l 0;
             text-align: center;
-            z-index: 11;
-            -webkit-transition: all .3s ease;
-            transition: all .3s ease;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
+            position: relative;
 
-            .add-to-links {
-                .lib-css(background, @color-elogic-white);
-                list-style: none;
-                padding: @indent__s_m 0;
+            .actions-primary {
+                position: static;
+                width: 100%;
+                background: none;
                 opacity: 0;
                 visibility: hidden;
-                transform: translateY(100%);
+                transform: translateX(-50%);
                 transition: all .4s ease;
+                margin-top: @indent__s;
 
-                li {
-                    margin-bottom: 0;
+                .btn-tocart {
+                    .lib-css(font-size, @font-size__base);
+                    border: none;
+                    border-bottom: 1px solid @color-elogic-black;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    text-align: center;
+                    padding-bottom: @indent__s;
+                    border-radius: 0;
+                    margin: auto;
+                    background: 0 0;
+                    padding-right: 0;
+                    padding-left: 0;
+                    padding-top: 0;
+                }
+
+                button {
+                    .lib-css(font-family, @font-family-oswald);
+                    .lib-css(font-weight, @font-weight-semibold);
                 }
             }
+        }
 
-            .fa-eye {
-                &:before {
-                    .lib-css(color, @color-elogic-black);
-                    .lib-font-size(@font-size__s_l);
-                    .lib-css(font-family, @font-family-awesome);
-                    .lib-css(font-weight, @font-weight-regular);
-                    content: @icon-elogic-eye;
-                }
-            }
-
-            .fa-heart {
-
-                &:before {
-                    .lib-css(color, @color-elogic-black);
-                    .lib-font-size(@font-size__s_l);
-                    .lib-css(font-family, @font-family-awesome);
-                    .lib-css(font-weight, @font-weight-regular);
-                    content: @icon-elogic-wish;
-                    margin: 0;
-                }
-
-                &:before:hover {
-                    .lib-css(color, @color-elogic-gray-discounts);
-                    cursor: pointer;
-                }
-
-            }
-
-            .fa-balance-scale {
-
-                &:before {
-                    .lib-css(color, @color-elogic-black);
-                    .lib-font-size(@font-size__s_l);
-                    .lib-css(font-family, @font-family-awesome);
-                    .lib-css(font-weight, @font-weight-awesome);
-                    content: @icon-elogic-compare;
-                }
-
-                &:before:hover {
-                    .lib-css(color, @color-elogic-gray-discounts);
-                    cursor: pointer;
-                }
-            }
-
-            .fa-eye,
-            .fa-heart,
-            .fa-balance-scale {
-                .lib-css(color, @color-elogic-black);
-                .lib-css(font-size, @font-size__base);
-                display: block;
-                line-height: 43px;
-                height: 43px;
-                width: 60px;
-                border-radius: 0;
-                margin: 0 auto;
-                text-align: center;
-            }
-
-            .fa-eye:hover,
-            .fa-heart:hover,
-            .fa-balance-scale:hover {
-                cursor: pointer;
-
-                &:before {
-                    .lib-css(color, @color-elogic-gray-main);
+        .group-items-container {
+            .product-item-info {
+                .hover-container {
+                    width: 90px;
                 }
             }
         }
@@ -185,44 +234,6 @@
 
     .product-item-photo {
         width: 100%;
-    }
-
-    .product-item-details {
-        margin: @indent__l 0;
-        text-align: center;
-        position: relative;
-
-        .actions-primary {
-            position: static;
-            width: 100%;
-            background: none;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateX(-50%);
-            transition: all .4s ease;
-            margin-top: @indent__s;
-
-            .btn-tocart {
-                .lib-css(font-size, @font-size__base);
-                border: none;
-                border-bottom: 1px solid @color-elogic-black;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                text-align: center;
-                padding-bottom: @indent__s;
-                border-radius: 0;
-                margin: auto;
-                background: 0 0;
-                padding-right: 0;
-                padding-left: 0;
-                padding-top: 0;
-            }
-
-            button {
-                .lib-css(font-family, @font-family-oswald);
-                .lib-css(font-weight, @font-weight-semibold);
-            }
-        }
     }
 
     .our_products_container {
@@ -365,7 +376,7 @@
         .category-product-container {
             margin-bottom: @indent__base;
             .slick-arrow {
-                top: -12%;
+                top: -18%;
                 right: 0;
                 visibility: hidden;
                 opacity: 0;
@@ -395,11 +406,12 @@
     //  _____________________________________________
 
     .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
-        .category-products {
+        #categoryProducts {
             .category-product-container {
                 .slick-arrow {
                     visibility: visible;
                     opacity: 1;
+                    top:-12%;
                 }
             }
         }

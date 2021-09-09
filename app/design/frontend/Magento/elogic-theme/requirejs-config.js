@@ -2,6 +2,7 @@
 var config = {
     map: {
         "*": {
+            preloader: 'Magento_Theme/js/preloader',
             slick: 'js/vendor/slick.min',
             select: 'js/vendor/select2.full',
             myslider: 'js/myslider',

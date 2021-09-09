@@ -593,6 +593,24 @@
             min-height: inherit;
         }
     }
+
+    .wishlist-index-index {
+        .product-item-info {
+            position: relative;
+        }
+
+        .product-item-inner {
+            top:0;
+            padding: 16px 9px 9px;
+            margin:0;
+            border-top: unset;
+        }
+
+        #wishlist-sidebar .product-item .product-item-info .product-item-photo .product-image-container {
+            height: unset;
+            max-width: 75px;
+        }
+    }
 }
 
 //
@@ -962,8 +980,9 @@
     }
 
 
-    // Modal Category Page
-    .catalog-category-view {
+    // Modals
+    .catalog-category-view,
+    .cms-index-index {
         .modal-inner-wrap {
             border: 5px solid #999;
             max-width: 65rem;
