@@ -61,6 +61,12 @@
         .lib-css(background-color, @page__background-color);
     }
 
+    body:not(.cms-index-index) {
+        .page-footer {
+            border-top: 1px solid @color-elogic-gray-subtle;
+        }
+    }
+
     .page-wrapper {
         overflow: hidden;
         .lib-vendor-prefix-display(flex);
@@ -1025,6 +1031,12 @@
         max-width: 1170px;
     }
 
+    .page-footer {
+        .footer.content {
+            padding: 0;
+        }
+    }
+
     .sticky {
         .header-wrapper {
             padding: 0;
@@ -1046,6 +1058,12 @@
 
     .page-main {
         max-width: 1350px;
+    }
+
+    .page-footer {
+        .footer.content {
+            max-width: 100%;
+        }
     }
 
 }

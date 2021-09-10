@@ -1277,6 +1277,28 @@
             margin-bottom: @indent__base;
         }
     }
+
+    .page-footer {
+        .footer.content {
+            ul {
+                padding-right: @indent__base;
+            }
+        }
+    }
+
+    // remove large margin in footer title on all pages except homepage, when it's needed
+
+    body:not(.cms-index-index) {
+        .footer-links-wrapper {
+            .footer-links-group {
+                .footer-links {
+                    .title h2 {
+                        margin: @indent__s_m 0;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // FROM 992 to 1023
@@ -1355,6 +1377,12 @@
             }
         }
     }
+
+    .footer-links-wrapper {
+        .footer-links-group {
+            padding-left: @indent__xl;
+        }
+    }
 }
 
 // FROM 1200 to 1440
@@ -1375,6 +1403,12 @@
             .news-blog-wrapper-outer {
                 width: 1170px;
             }
+        }
+    }
+
+    .footer-links-wrapper {
+        .footer-links-group {
+            padding-left: @indent__xl * 2;
         }
     }
 
