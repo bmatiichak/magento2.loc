@@ -67,8 +67,8 @@ use Magento\Framework\App\Action\Action;
                                     <div class="actions-secondary" data-role="add-to-links">
                                         <ul class="add-to-links">
                                             <li>
-                                                <a href="#" class="action quick-view"> 
-                                                <i class="fas fa-eye"></i>
+                                                <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="action quick-view" title="<?= $block->escapeHtmlAttr(__('View Product')) ?>"> 
+                                                    <i class="fas fa-eye"></i>
                                                 </a>
                                             </li>
                                             <?php if ($this->helper(\Magento\Wishlist\Helper\Data::class)->isAllow() && $showWishlist) : ?>

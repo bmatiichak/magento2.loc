@@ -75,18 +75,18 @@ $_helper = $block->getData('outputHelper');
                             <div data-role="add-to-links" class="actions-secondary">
                                 <ul class="add-to-links">
                                     <li>
-                                        <a href="#" class="action quick-view"> 
+                                        <a href="<?= $block->escapeUrl($block->getProductUrl($_product)) ?>" class="action quick-view" title="<?= $block->escapeHtmlAttr(__('View Product')) ?>"> 
                                         <i class="fas fa-eye"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" data-post='<?= /* @noEscape */ $block->getAddToWishlistParams($_product) ?>' class="action to-wish-list" data-action="add-to-wishlist">
+                                        <a href="#" data-post='<?= /* @noEscape */ $block->getAddToWishlistParams($_product) ?>' class="action to-wish-list" data-action="add-to-wishlist" title="<?= $block->escapeHtmlAttr(__('Add to Wish List')) ?>">
                                         <i class="fas fa-heart"></i>
                                         </a>
                                     </li>
                                     <?php $compareHelper = $this->helper(\Magento\Catalog\Helper\Product\Compare::class); ?>
                                     <li>
-                                        <a href="#" class="action to-compare" data-post='<?= /* @noEscape */ $compareHelper->getPostDataParams($_product) ?>'> 
+                                        <a href="#" class="action to-compare" data-post='<?= /* @noEscape */ $compareHelper->getPostDataParams($_product) ?>' title="<?= $block->escapeHtmlAttr(__('Add to Compare')) ?>"> 
                                         <i class="fas fa-balance-scale"></i>
                                         </a>
                                     </li>
@@ -177,11 +177,11 @@ $_helper = $block->getData('outputHelper');
 
                                 <?php if ($viewMode === 'list'): ?>
                                     <div data-role="add-to-links" class="actions-secondary">
-                                    <a href="#" data-post='<?= /* @noEscape */ $block->getAddToWishlistParams($_product) ?>' class="action to-wish-list" data-action="add-to-wishlist">
+                                    <a href="#" data-post='<?= /* @noEscape */ $block->getAddToWishlistParams($_product) ?>' class="action to-wish-list" data-action="add-to-wishlist" title="<?= $block->escapeHtmlAttr(__('Add to Wish List')) ?>">
                                         <i class="fas fa-heart"></i>
                                     </a>
                                     <?php $compareHelper = $this->helper(\Magento\Catalog\Helper\Product\Compare::class); ?>
-                                    <a href="#" class="action to-compare" data-post='<?= /* @noEscape */ $compareHelper->getPostDataParams($_product) ?>'> 
+                                    <a href="#" class="action to-compare" title="<?= $block->escapeHtmlAttr(__('Add to Compare')) ?>" data-post='<?= /* @noEscape */ $compareHelper->getPostDataParams($_product) ?>'> 
                                         <i class="fas fa-balance-scale"></i>
                                     </a>
                                     </div>
