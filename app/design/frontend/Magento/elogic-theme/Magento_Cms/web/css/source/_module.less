@@ -36,8 +36,6 @@
                 margin-top: 0;
                 .footer.content {
                     max-width: 1920px;
-                    padding-left: 0;
-                    padding-right: 0;
                 }
             }
         }
@@ -540,7 +538,6 @@
             ul li {
                 display: inline-block;
                 padding-right: @indent__base;
-                padding-left: @indent__xs;
 
                 a {
                     .lib-css(color, @color-elogic-gray-main);
@@ -754,7 +751,7 @@
 
     .footer-links-wrapper {
         border-top: 1px solid @color-elogic-gray-subtle;
-        padding-top: @indent__s;
+        padding: @indent__l @indent__s_m;
         .lib-vendor-prefix-grid-template-columns(1fr);
         .footer-links-group {
             .footer-links {
@@ -772,7 +769,7 @@
     }
 
     .footer-links-group {
-        padding: 0 @indent__s_m;
+        padding: 0;
     }
 
     .catalog-category-view {
@@ -1104,7 +1101,7 @@
                     .lib-vendor-box-align(center);
                     .lib-vendor-justify-content(center);
                     li {
-                        padding:0 @indent__xs;
+                        padding-right: @indent__xs;
                     }
                 }
             }
@@ -1134,6 +1131,11 @@
             .footer-social {
                 p {
                     display: none;
+                }
+
+                ul li {
+                    padding-left: @indent__s;
+                    padding-right: 0;
                 }
             }
         }
