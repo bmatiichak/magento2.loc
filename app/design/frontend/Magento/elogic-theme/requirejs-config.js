@@ -7,12 +7,12 @@ var config = {
             select: 'js/vendor/select2.full',
             myslider: 'js/myslider',
             myselect: 'js/myselect',
-            mygiftr: 'js/mygiftr',
             footerdropdown: 'Magento_Theme/js/footerdropdown',
             scrolltop: 'Magento_Theme/js/scrolltop',
             collapse: 'Magento_Theme/js/collapse',
             dropdown: 'Magento_Theme/js/dropdown',
-            stickyheader: 'Magento_Theme/js/stickyheader'
+            stickyheader: 'Magento_Theme/js/stickyheader',
+            modalselect: 'Mirasvit_Giftr/js/modalselect'
         }
     },
     shim: {
@@ -26,7 +26,7 @@ var config = {
     config: {
         mixins: {
             'Mirasvit_Giftr/js/item': {
-                'js/itemOverride': true
+                'Mirasvit_Giftr/js/itemOverride': true
             }
         }
     }

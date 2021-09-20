@@ -448,6 +448,12 @@
                     overflow: hidden;
                 }
 
+                .submenu:not(:first-child) {
+                    .active > a {
+                        border-color: @color-elogic-white;
+                    }
+                }
+
                 float: none;
                 .lib-css(background, @color-elogic-black);
 
@@ -462,6 +468,8 @@
                         border-bottom: 1px solid @color-elogic-gray-dark;
                     }
                 }
+
+
 
                 .nav-item {
                     .lib-css(background, @color-elogic-black);

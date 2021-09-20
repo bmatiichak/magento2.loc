@@ -1,22 +1,20 @@
 <?php
 /**
  * @var $block \Mirasvit\Giftr\Block\Item\Add
- * inited mygiftr on line 10;
+ * added registry title and select for modal window
+ * removed message block
  */
 ?>
-
 <div class="giftr-list" style="display: none"
-     data-bind="scope: 'giftr-addto__form'"
-     data-mage-init='{"mygiftr":{}}'>
+     data-bind="scope: 'giftr-addto__form'">
 
     <div class="registry-list" data-bind="visible: hasRegistries">
         <div class="registry-title">
-            <h3>Select Gift Registry</h3>
+            <h3><?= __('Select Gift Registry') ?></h3>
         </div>
 
-
         <div class="initial-select">
-            Select Category
+            <?= __('Select Category') ?>
         </div>
 
         <div class="registries options-container" data-bind="foreach: registries">
@@ -28,10 +26,6 @@
         </div>
 
         <a id="confirm-add-to-registry" href="#" data-bind="click: addProduct"><?= __('Add to Gift Registry') ?></a>
-    </div>
-
-    <div data-bind="visible: isMessageVisible()">
-        <span data-bind="html: getMessage()"></span>
     </div>
 </div>
 
