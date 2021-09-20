@@ -6,6 +6,7 @@ var config = {
             select: 'js/vendor/select2.full',
             myslider: 'js/myslider',
             myselect: 'js/myselect',
+            mygiftr: 'js/mygiftr',
             footerdropdown: 'Magento_Theme/js/footerdropdown',
             scrolltop: 'Magento_Theme/js/scrolltop',
             collapse: 'Magento_Theme/js/collapse',
@@ -19,6 +20,13 @@ var config = {
         },
         select: {
             deps: ['jquery'],
+        }
+    },
+    config: {
+        mixins: {
+            'Mirasvit_Giftr/js/item': {
+                'js/itemOverride': true
+            }
         }
     }
 };

@@ -1,0 +1,121 @@
+& when (@media-common =true) {
+    .elogic_gallery-index-index {
+        .column.main {
+            h1 {
+                .lib-css(font-weight, @font-weight-regular);
+                span {
+                    .lib-css(font-weight, @font-weight-bold);
+                }
+            }
+
+            p {
+                margin-bottom: 0;
+                text-transform: uppercase;
+                text-align: left;
+                .lib-css(font-size, @font-size__l_xl);
+                .lib-css(font-weight, @font-weight-light);
+                .lib-css(font-family, @font-family-oswald);
+                letter-spacing: 1.5px;
+            }
+            .thanks-container {
+                p {
+                    text-align: center;
+                }
+            }
+        }
+        .page-footer {
+            margin-top: 0;
+        }
+
+        .footer.content {
+            padding-top: 0;
+        }   
+    }
+
+    #gallery {
+        padding: 10% 0;
+        .slick-slide {
+            position: relative;
+
+            > .image-container {
+                transition: all 300ms ease;
+                opacity: 0.8;
+                margin: @indent__s;
+                padding: 5%;
+                transform: scale(.95);
+                filter: blur(1.5px);
+                perspective: 1000px;
+                position: relative;
+
+                img {
+                    transform-style: preserve-3d;
+                    transform: rotateX(50deg);
+                    transition: all 0.8s;
+                }
+            }
+
+            &.slick-active {
+                > .image-container{
+                    transform: scale(1);
+                }
+            }
+
+            &.slick-center {
+                > .image-container {
+                    transform: scale(1.15);
+                    opacity: 1;
+                    z-index: 1;
+                    filter: none;
+
+                    img {
+                        transform: rotateX(10deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+
+    .column.main {
+        .content-container {
+            h1 {
+                margin: @indent__base;
+            }
+        }
+    }
+
+    .footer.content .content-container {
+        margin: @indent__l auto 0 auto;
+    }
+}
+
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
+
+    .elogic_gallery-index-index {
+        .column.main {
+            p {
+                .lib-css(font-size, @font-size__s_l);
+            }
+        }
+    }
+
+    #gallery {
+        padding: 20% 0;
+
+        .slick-slide {
+            > .image-container {
+                padding: 3%;
+            }
+
+            &.slick-center {
+                > .image-container {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}

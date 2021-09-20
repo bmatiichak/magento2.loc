@@ -9,14 +9,12 @@ define([
 			trigger: '',
 			press: '',
 		},
-
+		_create: function () {
 			$(this.options.trigger).click(() => {
 				$(this.options.trigger).toggleClass("opened");
 				$(this.options.press).toggleClass("collapsible-show");
 			});
-
-				return $.elogic.collapse;
-			}
-
+		},
 	});
+	return $.elogic.collapse;
 });

@@ -14,6 +14,7 @@ atlassian*
 /pub/sitemap.xml
 /.idea
 /.gitattributes
+/app/code/Mirasvit
 /app/code/Ves
 /app/code/Mirasvit
 /app/config_sandbox
