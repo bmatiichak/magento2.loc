@@ -17,7 +17,7 @@ class Index extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         $this->resultPage = $this->_pageFactory->create();
-        $this->resultPage->getConfig()->getTitle()->set((__('Elogic Gallery')));
+        $this->resultPage->getConfig()->getTitle()->set((__('Elogic Gallery'))); //adds title to page in browser
         return $this->resultPage;
     }
 }

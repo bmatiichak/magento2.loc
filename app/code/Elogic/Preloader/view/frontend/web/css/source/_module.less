@@ -22,10 +22,21 @@
     }
     .load hr{border:0;margin:0;width:40%;height:40%;position:absolute;border-radius:50%;animation:spin 2s ease infinite}
 
-    .load :first-child{background:#080808;animation-delay:-1.5s}
-    .load :nth-child(2){background:#555;animation-delay:-1s}
-    .load :nth-child(3){background:#222;animation-delay:-0.5s}
-    .load :last-child{background:#888}
+    .load :first-child{
+        .lib-css(background, @color-elogic-black-hover);
+        animation-delay:-1.5s;
+    }
+    .load :nth-child(2){
+        .lib-css(background, @color-elogic-gray-discounts);
+        animation-delay:-1s;
+    }
+    .load :nth-child(3){
+        .lib-css(background, @color-elogic-black);
+        animation-delay:-0.5s;
+    }
+    .load :last-child{
+        .lib-css(background, @color-elogic-gray-main);
+    }
 
     @keyframes spin{
     0%,100%{transform:translate(0)}
