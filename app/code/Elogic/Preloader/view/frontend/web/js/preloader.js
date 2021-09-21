@@ -12,7 +12,7 @@ define([
         
 		_create: function () {
             $(this.options.body).attr("cz-shortcut-listen", "true"); {
-                $(this.options.hide).fadeOut(1200, "linear", "complete");
+                $(this.options.hide).fadeOut(1500, "linear", "complete");
 				$(this.options.body).css("overflow","visible");
             }
 		},

@@ -778,6 +778,12 @@
         }
     }
 
+    .footer-links-group.active {
+        .footer-links .title h2::after {
+            content: '\f068';
+        }
+    }
+
     .footer-links {
         .title {
             margin: 35px 0 @indent__s_m 0;
@@ -788,17 +794,18 @@
             }
 
             & h2::after {
-            .lib-css(font-family, @font-family-awesome);
-            .lib-css(font-size, @font-size__xs_s);
-            .lib-css(color, @color-elogic-gray-dark);
-            .lib-css(background, @color-elogic-gray-subtle);
-            display: inline-block;
-            content: "\f067";
-            line-height: 30px;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            cursor: pointer;
+                .lib-css(font-family, @font-family-awesome);
+                .lib-css(font-size, @font-size__xs_s);
+                .lib-css(color, @color-elogic-gray-dark);
+                .lib-css(background, @color-elogic-gray-subtle);
+                transition: all .3s ease;
+                display: inline-block;
+                content: "\f067";
+                line-height: 30px;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                cursor: pointer;
             }
 
             &:hover {

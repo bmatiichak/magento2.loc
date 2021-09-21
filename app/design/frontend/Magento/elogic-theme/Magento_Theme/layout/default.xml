@@ -1,22 +1,11 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-    </head>
     <body>
 
     <referenceBlock name="footer_links" remove="true" />
     <referenceBlock name="copyright" remove="true" />
     <referenceBlock name="header.panel.wrapper" remove="true" />
     <referenceBlock name="form.subscribe" remove="true" />
-
-    <referenceContainer name="after.body.start">
-        <block class="Magento\Framework\View\Element\Template" name="container.preloader" as="preloader" template="Magento_Theme::html/preloader.phtml"/>
-    </referenceContainer>
-
-    <referenceContainer name="footer-container">
-        <block class="Magento\Framework\View\Element\Template" name="backtop.btn" template="Magento_Theme::html/scrolltop.phtml"/>
-        <block class="Magento\Framework\View\Element\Template" name="footer.dropdown" template="Magento_Theme::html/footerdropdown.phtml"/>
-    </referenceContainer>
 
 
     <referenceContainer name="header-wrapper">
@@ -41,6 +30,11 @@
                 <argument name="block_id" xsi:type="string">my_footer_copyright</argument>
             </arguments>
         </block>
+    </referenceContainer>
+
+    <referenceContainer name="footer-container">
+        <block class="Magento\Framework\View\Element\Template" name="backtop.btn" template="Magento_Theme::html/scrolltop.phtml"/>
+        <block class="Magento\Framework\View\Element\Template" name="footer.dropdown" template="Magento_Theme::html/footerdropdown.phtml"/>
     </referenceContainer>
 
     <move element="logo" destination="header.wrapper" before="-" />
