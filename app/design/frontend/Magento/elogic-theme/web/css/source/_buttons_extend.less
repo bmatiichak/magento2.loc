@@ -1,0 +1,20 @@
+& when (@media-common = true) {
+    a.action.primary,
+    button.action.primary {
+        .lib-css(background, @color-elogic-black);
+        .lib-css(color, @color-elogic-white);
+        .lib-css(font-weight, @font-weight-light);
+        padding: @indent__s_m;
+        text-transform: uppercase;
+        margin: 0;
+        border: 1px solid @color-elogic-black;
+        box-shadow: none;
+        border-radius: 0;
+        transition: all .4s ease;
+        width: auto;
+        &:hover {
+            .lib-css(background, @color-elogic-gray-main);
+            border: 1px solid @color-elogic-gray-main;
+        }
+    }
+}
